@@ -1,8 +1,10 @@
 ul {
     list-style-type: none;
     margin: 0;
+    margin-top: 5vh;
     padding: 0;
     overflow: hidden;
+    margin-left: 10vw;
   }
   
   li {
@@ -11,5 +13,13 @@ ul {
   
   li a {
     display: block;
+    padding: 8px;
+    padding-right: 8vw;
+  }
+  button{
+    float: right;
+    display: block;
+    margin: 4px;
+    margin-right: 10vw;
     padding: 8px;
   }
