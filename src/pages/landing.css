@@ -14,7 +14,7 @@ ul {
   li a {
     display: block;
     padding: 8px;
-    padding-right: 8vw;
+    padding-right: 5vw;
   }
   button{
     float: right;
