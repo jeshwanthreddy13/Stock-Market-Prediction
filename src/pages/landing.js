@@ -7,7 +7,7 @@ import Nav from './nav'
 class LandingPage extends Component {
     render() {
       return (
-        <div>
+        <div class="landing">
           <Nav/>
           <div>
             <VictoryCandlestick candleColors={{ positive: "#43BFC7", negative: "#F70D1A" }}
