@@ -1,3 +1,8 @@
+body{
+  background: rgb(253,253,255);
+  background: radial-gradient(circle, rgba(253,253,255,1) 0%, rgba(244,239,240,1) 100%);
+}
+
 ul {
     list-style-type: none;
     margin: 0;
