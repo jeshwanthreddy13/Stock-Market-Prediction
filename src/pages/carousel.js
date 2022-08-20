@@ -1,25 +1,13 @@
-import React, {Component} from "react";
-import ReactFullpage from '@fullpage/react-fullpage';
+import React from "react";
+import { Carousel } from "react-scroll-slider";
 import LandingPage from './landing';
 import About from "./about";
 
-const Fullpage = () => (
-    <ReactFullpage
-      scrollingSpeed = {1000} /* Options here */
-  
-      render={({ state, fullpageApi }) => {
-        return (
-          <ReactFullpage.Wrapper>
-            <div className="section">
-              <LandingPage/>
-            </div>
-            <div className="section">
-              <About/>
-            </div>
-          </ReactFullpage.Wrapper>
-        );
-      }}
-    />
-  );
+const FullPage = () => (
+  <Carousel>
+    <LandingPage />
+    <About />
+  </Carousel>
+);
 
-export default Fullpage;
+export default FullPage;

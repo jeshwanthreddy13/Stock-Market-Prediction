@@ -1,11 +1,11 @@
-import * as THREE from 'three'
-import { useState, useRef, Suspense, useMemo } from 'react'
-import { Canvas, useThree, useFrame, useLoader } from '@react-three/fiber'
-import { Reflector, CameraShake, OrbitControls, useTexture } from '@react-three/drei'
-import { KernelSize } from 'postprocessing'
-import { EffectComposer, Bloom } from '@react-three/postprocessing'
-import { SVGLoader } from 'three/examples/jsm/loaders/SVGLoader'
-
+import * as THREE from 'three';
+import { useState, useRef, Suspense, useMemo } from 'react';
+import { Canvas, useThree, useFrame, useLoader } from '@react-three/fiber';
+import { Reflector, CameraShake, OrbitControls, useTexture } from '@react-three/drei';
+import { KernelSize } from 'postprocessing';
+import { EffectComposer, Bloom } from '@react-three/postprocessing';
+import { SVGLoader } from 'three/examples/jsm/loaders/SVGLoader';
+import './candlestick.css';
 
 function Triangle({ color, ...props }) {
   const ref = useRef()
@@ -45,6 +45,7 @@ function Ground(props) {
 
 export default function Candlestick() {
   return (
+    <div id="candle">
     <Canvas dpr={[1, 1.5]} camera={{ position: [1.5, -1.5, 15] }} width="100%" height="100%">
       <color attach="background" args={['black']} />
       <ambientLight />
@@ -70,5 +71,6 @@ export default function Candlestick() {
       </Suspense>
       <CameraShake yawFrequency={0.2} pitchFrequency={0.2} rollFrequency={0.2} />
     </Canvas>
+    </div>
   )
 }

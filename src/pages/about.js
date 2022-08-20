@@ -1,9 +1,5 @@
 import {React, Component } from "react";
 import './about.css'
-import stock from '../assets/about/stock.jpg'
-import credits from '../assets/about/credits.png'
-import prediction from '../assets/about/prediction.png'
-import trading from '../assets/about/trading.png'
 
 class About extends Component {
     render() {
