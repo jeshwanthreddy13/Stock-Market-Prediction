@@ -1,0 +1,58 @@
+@import url("https://fonts.googleapis.com/css?family=Sacramento");
+@import url("https://fonts.googleapis.com/css?family=Arima");
+@import url("https://fonts.googleapis.com/css?family=Gentium+Book+Basic");
+.about {
+    width: 100%;
+    margin: 0%;
+  }
+.about-icons {
+    float:left;
+    width: 64%;
+    background-color: #0B1F37;
+    height: 100vh;
+  }
+.about-data {
+    float:right;
+    width: 36%;
+    background-color: #fff;
+    height: 100vh;
+  }
+.base-text{
+    font-size: 5rem;
+    text-align: center;
+    position:absolute;
+    right:2%;
+    opacity: 0.1;
+}
+.over-text{
+    font-size: 4rem;
+    text-align: center;
+    position:absolute;
+    top: 3%;
+    right:10%;
+    font-family: "Sacramento";
+}
+.data{
+    position: absolute;
+    font-size: 1.3rem;
+    top: 20%;
+    padding: 5%;
+    font-family: "Arima";
+}
+.grid-container {
+    display: grid;
+    grid-template-columns: auto auto;
+    padding: 10px;
+  }
+.grid-item {
+    font-size: 1.3rem;
+    padding-top: 15%;
+    text-align: center;
+    height: 38vh;
+    color: white;
+    font-family: "Gentium Book Basic";
+  }
+  .grid-item img{
+    width: 160px;
+    height: 160px;
+}
