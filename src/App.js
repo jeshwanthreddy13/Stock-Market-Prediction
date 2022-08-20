@@ -1,9 +1,9 @@
-import LandingPage from './pages/landing';
+import Candlestick from './pages/triangle';
 
 function App() {
   return (
     <div className="App">
-      <LandingPage/>
+      <Candlestick/>
     </div>
   );
 }
