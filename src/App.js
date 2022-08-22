@@ -1,12 +1,12 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Fullpage from "./pages/carousel";
+import HomePage from "./pages/homepage";
 
 function App() {
   return (
     <>
     <Router>
       <Routes>
-        <Route path='/' element={ <Fullpage />}/>
+        <Route path='/' element={ <HomePage />}/>
       </Routes>
     </Router>
     </>

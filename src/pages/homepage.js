@@ -1,13 +1,14 @@
 import React from "react";
-import { Carousel } from "react-scroll-slider";
 import LandingPage from './landing';
 import About from "./about";
+import Features from './features';
 
-const FullPage = () => (
-  <Carousel>
+const HomePage = () => (
+  <div>
     <LandingPage />
     <About />
-  </Carousel>
+    <Features />
+  </div>
 );
 
-export default FullPage;
+export default HomePage;
