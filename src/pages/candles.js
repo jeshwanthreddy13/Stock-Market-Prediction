@@ -7,11 +7,40 @@ import { EffectComposer, Bloom } from '@react-three/postprocessing';
 import { SVGLoader } from 'three/examples/jsm/loaders/SVGLoader';
 import './candlestick.css';
 
-function Triangle({ color, ...props }) {
+
+function Varcandle1({ color, ...props }) {
   const ref = useRef()
   const [r] = useState(() => Math.random() * 10000)
   useFrame((_) => (ref.current.position.y = -1.7 + Math.sin(_.clock.elapsedTime + r) / 10))
   const { paths: [path] } = useLoader(SVGLoader, '/cd1.svg') // prettier-ignore
+  const geom = useMemo(() => SVGLoader.pointsToStroke(path.subPaths[0].getPoints(), path.userData.style), [])
+  return (
+    <group ref={ref}>
+      <mesh geometry={geom} {...props}>
+        <meshBasicMaterial color={color} toneMapped={false} />
+      </mesh>
+    </group>
+  )
+}
+function Varcandle2({ color, ...props }) {
+  const ref = useRef()
+  const [r] = useState(() => Math.random() * 10000)
+  useFrame((_) => (ref.current.position.y = -1.7 + Math.sin(_.clock.elapsedTime + r) / 10))
+  const { paths: [path] } = useLoader(SVGLoader, '/cd2.svg') // prettier-ignore
+  const geom = useMemo(() => SVGLoader.pointsToStroke(path.subPaths[0].getPoints(), path.userData.style), [])
+  return (
+    <group ref={ref}>
+      <mesh geometry={geom} {...props}>
+        <meshBasicMaterial color={color} toneMapped={false} />
+      </mesh>
+    </group>
+  )
+}
+function Varcandle3({ color, ...props }) {
+  const ref = useRef()
+  const [r] = useState(() => Math.random() * 10000)
+  useFrame((_) => (ref.current.position.y = -1.7 + Math.sin(_.clock.elapsedTime + r) / 10))
+  const { paths: [path] } = useLoader(SVGLoader, '/cd3.svg') // prettier-ignore
   const geom = useMemo(() => SVGLoader.pointsToStroke(path.subPaths[0].getPoints(), path.userData.style), [])
   return (
     <group ref={ref}>
@@ -52,16 +81,17 @@ export default function Candlestick() {
       <OrbitControls enableZoom={false} enablePan={false} enableRotate={false} />
       <Suspense fallback={null}>
         <Rig>
-          <Triangle color="cyan" scale={0.009} position={[-5.35, -1, -12]} rotation={[0, 0, 0]} />
-          <Triangle color="#ff2060" scale={0.009} position={[-4, 0, -10]} rotation={[0, 0, 0]} />
-          <Triangle color="cyan" scale={0.009} position={[-3.9, 0, -12]} rotation={[0, 0, 0]} />
-          <Triangle color="#ff2060" scale={0.009} position={[-3.85, 1, -14]} rotation={[0, 0, 0]} />
-          <Triangle color="orange" scale={0.009} position={[-2, 1, -9]} rotation={[0, 0, 0]} />
-          <Triangle color="cyan" scale={0.009} position={[-1.99, 0, -13]} rotation={[0, 0, 0]} />
-          <Triangle color="#ff2060" scale={0.009} position={[-0.55, 0.12, -7.5]} rotation={[0, 0, 0]} />
-          <Triangle color="cyan" scale={0.009} position={[-0.75, 0, -20]} rotation={[0, 0, 0]} />
-          <Triangle color="#ff2060" scale={0.009} position={[0.25, 2, -15]} rotation={[0, 0, 0]} />
-          <Triangle color="cyan" scale={0.009} position={[1, 0, -20]} rotation={[0, 0, 0]} />
+          <Varcandle1 color="cyan" scale={0.009} position={[-11.5, 1, -21]} rotation={[0, 0, 0]} />
+          <Varcandle2 color="#ff2060" scale={0.009} position={[-5.8, 2, -10]} rotation={[0, 0, 0]} />
+          <Varcandle1 color="cyan" scale={0.009} position={[-5.8, 1.5, -12]} rotation={[0, 0, 0]} />
+          <Varcandle1 color="#ff2060" scale={0.009} position={[-2, 2, -6]} rotation={[0, 0, 0]} />
+          <Varcandle3 color="#ff2060" scale={0.009} position={[-6, 8, -17]} rotation={[0, 0, 0]} />
+          <Varcandle2 color="orange" scale={0.009} position={[-1.2, 2, -9]} rotation={[0, 0, 0]} />
+          <Varcandle1 color="cyan" scale={0.009} position={[4, 2, -13]} rotation={[0, 0, 0]} />
+          <Varcandle1 color="#ff2060" scale={0.009} position={[-0.3, 2.12, -7.5]} rotation={[0, 0, 0]} />
+          <Varcandle1 color="cyan" scale={0.009} position={[1.6, 2, -20]} rotation={[0, 0, 0]} />
+          <Varcandle2 color="#ff2060" scale={0.009} position={[2.5, 4, -15]} rotation={[0, 0, 0]} />
+          <Varcandle3 color="cyan" scale={0.009} position={[4.25, 11, -20]} rotation={[0, 0, 0]} />
           <Ground mirror={1} blur={[500, 100]} mixBlur={12} mixStrength={1.5} rotation={[-Math.PI / 2, 0, Math.PI / 2]} position-y={-0.8} />
         </Rig>
         <EffectComposer multisampling={8}>
