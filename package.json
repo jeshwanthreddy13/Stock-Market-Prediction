@@ -19,13 +19,10 @@
     "react-awesome-reveal": "^4.0.0",
     "react-colorful": "^5.6.0",
     "react-dom": "^18.2.0",
-<<<<<<< HEAD
     "react-native": "^0.69.4",
     "react-native-svg": "^13.0.0",
     "react-native-svg-path-gradient": "^0.4.0",
-=======
     "react-icons": "^4.4.0",
->>>>>>> 6d76929e51bca1671e83bfed03e652c1a09ea8aa
     "react-router-dom": "^6.3.0",
     "react-scripts": "5.0.1",
     "react-scroll-slider": "^1.0.1",
