@@ -1,0 +1,131 @@
+@import url("https://fonts.googleapis.com/css?family=Kanit");
+.grid {
+    display: grid;
+    grid-template-columns: 25% 22% 22% 22%;
+    grid-template-rows: auto auto;
+    gap: 3%;
+    padding: 3%;
+    width: 90%;
+    height: 80%;
+  }
+
+  .one {
+    grid-column: 1 / 2;
+    grid-row: 1 / 3;
+    background-image: url("../assets/about/stock.jpg")
+  }
+  .two, .three, .four, .five, .six, .seven{
+    background-color: white;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+    transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+    border-radius: 20px;
+  }
+  .two:hover, .three:hover, .four:hover, .five:hover, .six:hover, .seven:hover{
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    animation-name: example;
+    animation-duration: 0.25s;
+    border-left: 8px solid orangered;
+    box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+    background-color: white;
+  }
+  .two {
+    grid-column: 2 / 3;
+    grid-row: 1 / 2;
+    background-color: #e7f0f5;
+  }
+  .three {
+    grid-column: 3/4;
+    grid-row: 1 / 2;
+    background-color: #f6f5f2;
+  }
+  .four {
+    grid-column: 4/5;
+    grid-row: 1/2;
+    background-color: #f6f5f2;
+  }
+  .five {
+    grid-column: 2/3;
+    grid-row: 2/3;
+    background-color: #fcf0e4;
+  }
+  .six {
+    grid-column: 3/4;
+    grid-row: 2/3;
+    background-color: #f4f6f7;
+  }
+  .seven {
+    grid-column: 4/5;
+    grid-row: 2/3;
+    background-color: #effafb;
+  }
+
+  @keyframes example {
+    0%   {border-left: 2px solid #ffffff;}
+    25%  {border-left: 3px solid #ffe6e6;}
+    50%  {border-left: 4px solid #ff8080;}
+    100% {border-left: 5px solid orangered;}
+}
+  .f-overlay{
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    text-align: center;
+    color:black;
+    margin-top: -12.5%;
+  }
+  .f-heading{
+    font-size: 2.5rem;
+    color: white;
+    text-align: center;
+    padding-top: 35%;
+  }
+  .f-data{
+    font-size: 1rem;
+    color: white;
+    width: 68%;
+    text-align: center;
+    margin-right: auto;
+    margin-left: auto;
+    line-height: 180%;
+    margin-bottom: 15%;
+  }
+
+  .f-button {
+    background-color: #f4511e;
+    border: none;
+    color: #FFFFFF;
+    text-align: center;
+    font-size: 18px;
+    padding: 14px;
+    width: 150px;
+    transition: all 0.5s;
+    cursor: pointer;
+    margin: 5px;
+    border-radius: 50px;
+  }
+  
+  .f-button span {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+  }
+  
+  .f-button span:after {
+    content: '\00bb';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -20px;
+    transition: 0.5s;
+  }
+  
+  .f-button:hover span {
+    padding-right: 25px;
+  }
+  
+  .f-button:hover span:after {
+    opacity: 1;
+    right: 0;
+  }

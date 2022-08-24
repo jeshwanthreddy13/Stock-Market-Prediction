@@ -1,0 +1,21 @@
+@import url("https://fonts.googleapis.com/css?family=Kanit");
+@import url("https://fonts.googleapis.com/css?family=Josefin+Sans");
+.fele{
+    padding:5%;
+}
+.fele h3{
+    font-family: "Kanit";
+    font-size: 1.3rem;
+    padding-left:10%;
+}
+.ficon{
+    font-size: 6rem;
+    padding-left: 10%;
+    padding-top:10%;
+    height: 30%;
+}
+.fele p{
+    padding-left: 10%;
+    width: 75%;
+    font-family: "Josefin Sans";
+}

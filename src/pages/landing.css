@@ -1,9 +1,8 @@
 @import url("https://fonts.googleapis.com/css?family=Aboreto");
 
 body{
-  background: black;
-  font-family: "Aboreto";
-  font-weight: bolder;
   padding:0; 
   margin:0;
+  width: 100%;
+  height: 100vh;
 }
