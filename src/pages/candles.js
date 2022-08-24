@@ -17,7 +17,7 @@ function Varcandle1({ color, ...props }) {
   return (
     <group ref={ref}>
       <mesh geometry={geom} {...props}>
-        <meshBasicMaterial color={color} toneMapped={false} />
+        <meshBasicMaterial color={color} toneMapped={false}/>
       </mesh>
     </group>
   )
@@ -75,32 +75,59 @@ function Ground(props) {
 export default function Candlestick() {
   return (
     <div id="candle">
-    <Canvas dpr={[1, 1.5]} camera={{ position: [1.5, -1.5, 15] }} width="100%" height="100%">
-      <color attach="background" args={['black']} />
-      <ambientLight />
-      <OrbitControls enableZoom={false} enablePan={false} enableRotate={false} />
-      <Suspense fallback={null}>
-        <Rig>
-          <Varcandle1 color="cyan" scale={0.009} position={[-11.5, 1, -21]} rotation={[0, 0, 0]} />
-          <Varcandle2 color="#ff2060" scale={0.009} position={[-5.8, 2, -10]} rotation={[0, 0, 0]} />
-          <Varcandle1 color="cyan" scale={0.009} position={[-5.8, 1.5, -12]} rotation={[0, 0, 0]} />
-          <Varcandle1 color="#ff2060" scale={0.009} position={[-2, 2, -6]} rotation={[0, 0, 0]} />
-          <Varcandle3 color="#ff2060" scale={0.009} position={[-6, 8, -17]} rotation={[0, 0, 0]} />
-          <Varcandle2 color="orange" scale={0.009} position={[-1.2, 2, -9]} rotation={[0, 0, 0]} />
-          <Varcandle1 color="cyan" scale={0.009} position={[4, 2, -13]} rotation={[0, 0, 0]} />
-          <Varcandle1 color="#ff2060" scale={0.009} position={[-0.3, 2.12, -7.5]} rotation={[0, 0, 0]} />
-          <Varcandle1 color="cyan" scale={0.009} position={[1.6, 2, -20]} rotation={[0, 0, 0]} />
-          <Varcandle2 color="#ff2060" scale={0.009} position={[2.5, 4, -15]} rotation={[0, 0, 0]} />
-          <Varcandle3 color="cyan" scale={0.009} position={[4.25, 11, -20]} rotation={[0, 0, 0]} />
-          <Ground mirror={1} blur={[500, 100]} mixBlur={12} mixStrength={1.5} rotation={[-Math.PI / 2, 0, Math.PI / 2]} position-y={-0.8} />
-        </Rig>
-        <EffectComposer multisampling={8}>
-          <Bloom kernelSize={3} luminanceThreshold={0} luminanceSmoothing={0.4} intensity={0.6} />
-          <Bloom kernelSize={KernelSize.HUGE} luminanceThreshold={0} luminanceSmoothing={0} intensity={0.5} />
-        </EffectComposer>
-      </Suspense>
-      <CameraShake yawFrequency={0.2} pitchFrequency={0.2} rollFrequency={0.2} />
-    </Canvas>
+      
+      <Canvas dpr={[1, 1.5]} camera={{ position: [1.5, -1.5, 15] }}>
+        <color attach="background" args={['black']} />
+        <ambientLight />
+        <OrbitControls enableZoom={false} enablePan={false} enableRotate={false} />
+        <Suspense fallback={null}>
+          <Rig>
+            <Varcandle1 color="cyan" scale={0.009} position={[-12, 1, -21]} rotation={[0, 0, 0]} />
+            <Varcandle1 color="cyan" scale={0.009} position={[-12, 1, -21]} rotation={[0, 0, 0]} />
+            <Varcandle2 color="#ff2060" scale={0.009} position={[-5.8, 2, -10]} rotation={[0, 0, 0]} />
+            <Varcandle2 color="#ff2060" scale={0.009} position={[-5.8, 2, -10]} rotation={[0, 0, 0]} />
+            <Varcandle1 color="cyan" scale={0.009} position={[-5.8, 1.5, -12]} rotation={[0, 0, 0]} />
+            <Varcandle1 color="cyan" scale={0.009} position={[-5.8, 1.5, -12]} rotation={[0, 0, 0]} />
+            <Varcandle1 color="#ff2060" scale={0.009} position={[-2, 2, -6]} rotation={[0, 0, 0]} />
+            <Varcandle1 color="#ff2060" scale={0.009} position={[-2, 2, -6]} rotation={[0, 0, 0]} />
+            <Varcandle3 color="#ff2060" scale={0.009} position={[-6.1, 8, -17]} rotation={[0, 0, 0]} />
+            <Varcandle3 color="#ff2060" scale={0.009} position={[-6.1, 8, -17]} rotation={[0, 0, 0]} />
+            <Varcandle2 color="cyan" scale={0.009} position={[-1, 2, -9]} rotation={[0, 0, 0]} />
+            <Varcandle2 color="cyan" scale={0.009} position={[-1, 2, -9]} rotation={[0, 0, 0]} />
+            <Varcandle1 color="cyan" scale={0.009} position={[4, 2, -13]} rotation={[0, 0, 0]} />
+            <Varcandle1 color="cyan" scale={0.009} position={[4, 2, -13]} rotation={[0, 0, 0]} />
+            <Varcandle1 color="#ff2060" scale={0.009} position={[3.7, 2.12, -7.5]} rotation={[0, 0, 0]} />
+            <Varcandle1 color="#ff2060" scale={0.009} position={[3.7, 2.12, -7.5]} rotation={[0, 0, 0]} />
+            <Varcandle1 color="cyan" scale={0.009} position={[1.6, 2, -20]} rotation={[0, 0, 0]} />
+            <Varcandle1 color="cyan" scale={0.009} position={[1.6, 2, -20]} rotation={[0, 0, 0]} />
+            <Varcandle1 color="#ff2060" scale={0.009} position={[2.5, 4, -15]} rotation={[0, 0, 0]} />
+            <Varcandle1 color="#ff2060" scale={0.009} position={[2.5, 4, -15]} rotation={[0, 0, 0]} />
+            <Varcandle3 color="cyan" scale={0.009} position={[0, 11, -21]} rotation={[0, 0, 0]} />
+            <Varcandle3 color="cyan" scale={0.009} position={[0, 11, -21]} rotation={[0, 0, 0]} />
+            <Varcandle2 color="#ff2060" scale={0.009} position={[4.95, 2, -8]} rotation={[0, 0, 0]} />
+            <Varcandle2 color="#ff2060" scale={0.009} position={[4.95, 2, -8]} rotation={[0, 0, 0]} />
+            <Varcandle1 color="#ff2060" scale={0.009} position={[-5.9, 1, -6]} rotation={[0, 0, 0]} />
+            <Varcandle1 color="#ff2060" scale={0.009} position={[-5.9, 1, -6]} rotation={[0, 0, 0]} />
+            <Varcandle2 color="cyan" scale={0.009} position={[-7.5, 1.25, -7]} rotation={[0, 0, 0]} />
+            <Varcandle2 color="cyan" scale={0.009} position={[-7.5, 1.25, -7]} rotation={[0, 0, 0]} />
+            <Varcandle1 color="#ff2060" scale={0.009} position={[4.8, 2, -6]} rotation={[0, 0, 0]} />
+            <Varcandle1 color="#ff2060" scale={0.009} position={[4.8, 2, -6]} rotation={[0, 0, 0]} />
+            <Varcandle2 color="cyan" scale={0.009} position={[6, 1, -6]} rotation={[0, 0, 0]} />
+            <Varcandle2 color="cyan" scale={0.009} position={[6, 1, -6]} rotation={[0, 0, 0]} />
+            <Varcandle1 color="#ff2060" scale={0.009} position={[-8.2, 2, -6]} rotation={[0, 0, 0]} />
+            <Varcandle1 color="#ff2060" scale={0.009} position={[-8.2, 2, -6]} rotation={[0, 0, 0]} />
+            <Varcandle1 color="cyan" scale={0.009} position={[-9, 3.2, -6]} rotation={[0, 0, 0]} />
+            <Varcandle1 color="cyan" scale={0.009} position={[-9, 3.2, -6]} rotation={[0, 0, 0]} />
+            <Ground mirror={1} blur={[500, 100]} mixBlur={12} mixStrength={1.5} rotation={[-Math.PI / 2, 0, Math.PI / 2]} position-y={-0.8} />
+          </Rig>
+          <EffectComposer multisampling={8}>
+            <Bloom kernelSize={3} luminanceThreshold={0} luminanceSmoothing={0.4} intensity={0.6} />
+            <Bloom kernelSize={KernelSize.HUGE} luminanceThreshold={0} luminanceSmoothing={0} intensity={0.5} />
+          </EffectComposer>
+        </Suspense>
+        <CameraShake yawFrequency={0.2} pitchFrequency={0.2} rollFrequency={0.2} />
+      </Canvas>
+      <div ><button class="sign-in" ><span>Sign Up </span></button></div>
     </div>
   )
 }

@@ -1,7 +1,7 @@
 import React, {Component} from "react";
 import "./features.css";
 import FeatureEle from "./feature_element";
-import { FaBeer } from "@react-icons/all-files/fa/FaBeer";
+
 import {RiCoinsFill} from "react-icons/ri";
 import {FcCandleSticks} from "react-icons/fc";
 import {GoFileDirectory} from "react-icons/go";
