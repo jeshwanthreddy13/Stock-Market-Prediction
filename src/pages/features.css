@@ -1,4 +1,8 @@
 @import url("https://fonts.googleapis.com/css?family=Kanit");
+body{
+  background: rgb(253,253,255);
+background: radial-gradient(circle, rgba(253,253,255,1) 0%, rgba(244,239,240,1) 100%);
+}
 .grid {
     display: grid;
     grid-template-columns: 25% 22% 22% 22%;
