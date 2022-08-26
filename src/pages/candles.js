@@ -75,7 +75,6 @@ function Ground(props) {
 export default function Candlestick() {
   return (
     <div id="candle">
-      
       <Canvas dpr={[1, 1.5]} camera={{ position: [1.5, -1.5, 15] }}>
         <color attach="background" args={['black']} />
         <ambientLight />
@@ -127,7 +126,6 @@ export default function Candlestick() {
         </Suspense>
         <CameraShake yawFrequency={0.2} pitchFrequency={0.2} rollFrequency={0.2} />
       </Canvas>
-      <div ><button class="sign-in" ><span>Sign Up </span></button></div>
     </div>
   )
 }

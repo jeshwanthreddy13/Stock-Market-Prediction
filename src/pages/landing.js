@@ -7,6 +7,7 @@ class LandingPage extends Component {
       return (
         <div class="landing">
           <div>
+          <div class="c-button"><button class="sign-in" ><span>Sign Up </span></button></div>
             <Candlestick/>
           </div>
         </div>
