@@ -18,7 +18,7 @@ width:100%;
   .one {
     grid-column: 1 / 2;
     grid-row: 1 / 3;
-    background-image: url("../assets/about/stock.jpg")
+    background-image: url("../../assets/about/stock.jpg")
   }
   .two, .three, .four, .five, .six, .seven{
     background-color: white;

@@ -5,7 +5,6 @@ import Features from './features';
 
 const HomePage = () => (
   <div>
-    <LandingPage />
     <About />
     <Features />
   </div>
