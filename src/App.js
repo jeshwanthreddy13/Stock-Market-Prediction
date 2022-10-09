@@ -1,18 +1,18 @@
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, Navigate  } from 'react-router-dom';
 import HomePage from "./pages/landing/homepage";
-import Form from "./pages/login/form";
 import Dashboard from './pages/dashboard/dashboard';
 import NotFound from './pages/notFound';
-import SignUp from './pages/login/signup';
+import Signup from './pages/login/signup';
+import Login from './pages/login/login';
 function App() {
   return (
     <>
     <Router>
       <Routes>
         <Route exact path='/' element={ <HomePage />}/>
-        <Route exact path='/login' element={ <Form />}/>
-        <Route exact path='/dashboard' element={ <Dashboard />}/>
-        <Route exact path='/signup' element={ <SignUp />}/>
+        <Route exact path='/login' element={ <Login />}/>
+        <Route path="/dashboard" element={localStorage.getItem("token") ? (<Dashboard />) : (<Navigate replace to={"/login"} />)} />
+        <Route exact path='/register' element={ <Signup />}/>
         <Route exact path = "*" element={<NotFound />} />
       </Routes>
     </Router>
