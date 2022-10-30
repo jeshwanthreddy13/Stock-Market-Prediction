@@ -18,7 +18,7 @@ class Features extends Component{
                         <div class="f-overlay">
                         <p class="f-heading">Our Features</p>
                         <p class="f-data">We strive to offer elements that will drive everyone who is novice at trading to assess their approaches and discover how to generate significant gains.</p>
-                        <button class="f-button"><span>Sign Up </span></button>
+                        <a href="/register"><button class="f-button"><span>Sign Up </span></button></a>
                         </div>
                     </div>
                     <div class="two"><FeatureEle name="Virtual Credits" icon={<BsCashStack color="#85bb65"/>} data="Invest using Virtual credits instead of actual money."/></div>

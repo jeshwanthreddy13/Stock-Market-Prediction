@@ -32,9 +32,8 @@
   font-size: 5rem;
   text-align: center;
   margin: auto;
-  margin-top:35%;
+  padding-top:35%;
   color: white;
-  border-right: 6px solid white;
   height: 15%;
 }
 .about-data {
@@ -43,13 +42,14 @@
   background-color: black;
   height: 100%;
   font-size: 1.2rem;
+  
 }
 .about-data p{
   width: 75%;
   height: 75%;
   text-align: center;
   margin: auto;
-  margin-top:25%;
+  padding-top:30%;
   line-height: 200%;
   font-family: 'Gentium Book Basic';
   color: white;

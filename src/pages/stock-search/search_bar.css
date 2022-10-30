@@ -1,0 +1,33 @@
+.Search {
+    width: 400px;
+    margin: 0 auto;
+    position: relative;
+    display: flex;
+  }
+  .SearchSpan {
+    width: 15%;
+    border: 1px solid #70afee;
+    background: #1C76D2;
+    padding-top: 4px;
+    text-align: center;
+    color: #fff;
+    border-radius: 5px 0 0 5px;
+    font-size: 20px;
+  }
+  .SearchInput {
+    width: 85%;
+    border: 3px solid #81b3e5;
+    border-left: none;
+    padding: 5px;
+    border-radius: 0 5px 5px 0;
+    outline: none;
+  }
+  .Submit{
+    float: right;
+    margin-left: 10px;
+    background-color: #1C76D2;
+    border-color: transparent;
+    color: white;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
