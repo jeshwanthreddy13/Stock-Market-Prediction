@@ -5,17 +5,20 @@
 }
 .fele h3{
     font-family: "Kanit";
-    font-size: 1.3rem;
-    padding-left:10%;
+    font-size: 25px;
+    padding-top: 10px;
+    margin-left: -60px;
 }
 .ficon{
-    font-size: 6rem;
+    font-size: 100px;
     padding-left: 10%;
-    padding-top:10%;
+    padding-top:5%;
     height: 30%;
+    display: inline;
 }
 .fele p{
     padding-left: 10%;
     width: 75%;
+    font-size: 15px;
     font-family: "Josefin Sans";
 }

@@ -20,7 +20,7 @@ function App() {
         <Route exact path='/stocks' element={ <Stock />}/>
         <Route exact path='/search' element={ <Search />}/>
         <Route exact path='/nav' element={ <Navbar />}/>
-        <Route path='/owned_stock*' element={ <OwnedStock />}/>
+        <Route path='/owned_stock' element={ <OwnedStock />}/>
         <Route path='/profile' element={ <Profile />}/>
         <Route exact path = "*" element={localStorage.getItem("token") ? (<Dashboard />) : (<Navigate replace to={"/login"} />)} />
       </Routes>

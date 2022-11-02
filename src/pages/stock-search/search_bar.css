@@ -6,26 +6,25 @@
   }
   .SearchSpan {
     width: 15%;
-    border: 1px solid #70afee;
-    background: #1C76D2;
+    background: rgb(142,14,0);
     padding-top: 4px;
     text-align: center;
     color: #fff;
-    border-radius: 5px 0 0 5px;
+    border-radius: 20px 0 0 20px;
     font-size: 20px;
   }
   .SearchInput {
     width: 85%;
-    border: 3px solid #81b3e5;
+    border: 3px solid rgb(142,14,0);
     border-left: none;
-    padding: 5px;
-    border-radius: 0 5px 5px 0;
+    padding: 10px;
+    border-radius: 0 20px 20px 0;
     outline: none;
   }
   .Submit{
     float: right;
     margin-left: 10px;
-    background-color: #1C76D2;
+    background-color: rgb(142,14,0);
     border-color: transparent;
     color: white;
     padding-left: 10px;

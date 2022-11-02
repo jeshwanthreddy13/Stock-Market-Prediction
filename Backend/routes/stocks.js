@@ -24,10 +24,9 @@ router.get("/", async (req, res) => {
   });
 
   router.get("/owned_stocks", async (req, res) => {
-    const id = (req.headers["id"])
+    const id = (req.user.id)
     const result = await User.findById(id)
     const stock_list = await Stock.find({email: result.email})
-    console.log("hello")
     res.json({
       error: null,
       data: {

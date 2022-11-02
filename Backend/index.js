@@ -25,6 +25,6 @@ process.env.DB_CONNECT,
 
 app.use("/api", authRoutes);
 app.use("/api/dashboard", verifyToken, dashboardRoutes);
-app.use("/api/stocks", stockRoutes);
+app.use("/api/stocks",  verifyToken, stockRoutes);
 
 app.listen(3001, () => console.log("server is running..."));

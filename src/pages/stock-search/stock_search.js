@@ -8,17 +8,20 @@ import Fuse from "fuse.js";
 import Navbar from "../navbar/nav";
 
 export default function Search (){
-  const [data, setData] = useState(Data);
+  var filtered = Data.filter(function(item) { 
+    return item["Name"].length <= 55;  
+ });
+  const [data, setData] = useState(filtered);
   const [value,setValue] = useState();
 
   const searchData = (pattern) => {
     setValue(pattern)
     if (!pattern) {
-      setData(Data);
+      setData(filtered);
       return;
     }
 
-    const fuse = new Fuse(Data, {
+    const fuse = new Fuse(filtered, {
       keys: ["Name", "Symbol"],
     });
 
@@ -36,7 +39,7 @@ export default function Search (){
   };
   
   return (
-    <div>
+    <div className="stock-wrap">
       <Navbar />
       <h1 className="Title">Search Stocks</h1>
       <div className="searchbar">

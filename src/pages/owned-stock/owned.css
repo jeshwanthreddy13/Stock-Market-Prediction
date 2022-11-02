@@ -1,3 +1,9 @@
+.os-wrapper{
+    width: 100vw;
+    height: 100vh;
+    background-image: url("./bck.png");
+    background-color: #cccccc;
+}
 .owned-table {
     border-collapse: collapse;
     margin: 20px 0;
@@ -8,31 +14,26 @@
     width: 75%;
     margin-left: auto;
     margin-right: auto;
+    animation: fadein 2s;
+    text-align: center;
 }
 
 .owned-table thead tr {
-    background-color: rgba(44,224,227,0.6);;
+    background-color: #86190a;
     color: #ffffff;
-    text-align: left;
 }
 
-.owned-table th,
+.owned-table th{
+    padding: 25px;
+}
 .owned-table td {
-    padding: 12px 15px;
+    padding: 20px;
+    border-bottom: solid #86190a 1px;
+    margin-bottom: 10px;
+    background-color: #ffffff;
 }
 
-.owned-table tbody tr {
-    border-bottom: 1px solid #dddddd;
-}
-
-.owned-table tbody tr:nth-of-type(even){
-    font-weight: bold;
-    color: rgb(39, 144, 146);
-}
-.owned-table tbody tr:nth-of-type(odd) {
-    background-color: #f3f3f3;
-}
-
-.owned-table tbody tr:last-of-type {
-    border-bottom: 2px solid rgba(44,224,227,0.6);;
-}
+@keyframes fadein {
+    from { opacity: 0}
+    to   { opacity: 1}
+  }

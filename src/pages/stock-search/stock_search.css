@@ -1,14 +1,24 @@
 .Container {
-    width: 80%;
+    width: 100%;
     margin: 0 auto;
+    margin-left: 25px;
     margin-top: 45px;
     display: flex;
     flex-wrap: wrap;
   }
   .Title {
     text-align: center;
+    padding-top: 5%;
+    padding-bottom: 3%;
   }
   .Submit{
-    float: right;
-    margin-right: 39%;
+    margin-right: 38%;
+    margin-top: 5px;
+    padding: 5px;
+    border-radius: 30px;
+    background-color: rgb(142,14,0);
+    margin-bottom: 3%;
+  }
+  .stock-wrap{
+
   }

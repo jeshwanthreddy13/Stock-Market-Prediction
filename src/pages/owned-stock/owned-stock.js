@@ -8,13 +8,10 @@ const OwnedStock = () => {
   const [dashboard, setDashboard] = useState({stock : []});
 
     useEffect(() => {
-      const queryParams = new URLSearchParams(window.location.search);
-      const id = (queryParams.get('id'))
-      console.log(id)
       fetch(`${config.baseUrl}/stocks/owned_stocks`, {
         method: "GET",
         headers: {
-          "id": id,
+          "auth-token": localStorage.getItem("token"),
         },
       })
         .then((res) => (res.json()))
@@ -23,8 +20,10 @@ const OwnedStock = () => {
         })
       }
     , []);
+    
     return (
         <>
+            <div className="os-wrapper">
             <Navbar /> 
             <h2>Owned Stocks</h2>
             <table className="owned-table">
@@ -47,6 +46,7 @@ const OwnedStock = () => {
               })}
               </tbody>
             </table>
+            </div>
         </>
     );
   };

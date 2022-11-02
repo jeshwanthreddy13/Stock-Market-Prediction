@@ -40,10 +40,6 @@
     "Name": "Arlington Asset Investment Corp 7.00%"
   },
   {
-    "Symbol": "AAIC^C",
-    "Name": "Arlington Asset Investment Corp 8.250% Seies C Fixed-to-Floating Rate Cumulative Redeemable Preferred Stock"
-  },
-  {
     "Symbol": "AAIN",
     "Name": "Arlington Asset Investment Corp 6.000% Senior Notes Due 2026"
   },
@@ -176,16 +172,8 @@
     "Name": "Arbor Realty Trust Common Stock"
   },
   {
-    "Symbol": "ABR^D",
-    "Name": "Arbor Realty Trust 6.375% Series D Cumulative Redeemable Preferred Stock Liquidation Preference $25.00 per Share"
-  },
-  {
     "Symbol": "ABR^E",
     "Name": "Arbor Realty Trust 6.25% Series E Cumulative Redeemable Preferred Stock"
-  },
-  {
-    "Symbol": "ABR^F",
-    "Name": "Arbor Realty Trust 6.25% Series F Fixed-to-Floating Rate Cumulative Redeemable Preferred Stock Liquidation Preference $25.00 per share"
   },
   {
     "Symbol": "ABSI",
@@ -320,14 +308,6 @@
     "Name": "Arch Capital Group Ltd. Common Stock"
   },
   {
-    "Symbol": "ACGLN",
-    "Name": "Arch Capital Group Ltd. Depositary Shares each Representing a 1/1000th Interest in a 4.550% Non-Cumulative Preferred Share Series G"
-  },
-  {
-    "Symbol": "ACGLO",
-    "Name": "Arch Capital Group Ltd. Depositary Shares Each Representing 1/1000th Interest in a Share of 5.45% Non-Cumulative Preferred Shares Series F"
-  },
-  {
     "Symbol": "ACHC",
     "Name": "Acadia Healthcare Company Inc. Common Stock"
   },
@@ -424,14 +404,6 @@
     "Name": "ACRES Commercial Realty Corp. Common Stock"
   },
   {
-    "Symbol": "ACR^C",
-    "Name": "ACRES Commercial Realty Corp. 8.625% Fixed-to-Floating Series C Cumulative Redeemable Preferred Stock"
-  },
-  {
-    "Symbol": "ACR^D",
-    "Name": "ACRES Commercial Realty Corp. 7.875% Series D Cumulative Redeemable Preferred Stock"
-  },
-  {
     "Symbol": "ACRE",
     "Name": "Ares Commercial Real Estate Corporation Common Stock"
   },
@@ -462,10 +434,6 @@
   {
     "Symbol": "ACU",
     "Name": "Acme United Corporation. Common Stock"
-  },
-  {
-    "Symbol": "ACV",
-    "Name": "Virtus Diversified Income & Convertible Fund Common Shares of Beneficial Interest"
   },
   {
     "Symbol": "ACVA",
@@ -502,10 +470,6 @@
   {
     "Symbol": "ADC",
     "Name": "Agree Realty Corporation Common Stock"
-  },
-  {
-    "Symbol": "ADC^A",
-    "Name": "Agree Realty Corporation Depositary Shares each representing 1/1000th of a 4.250% Series A Cumulative Redeemable Preferred Stock"
   },
   {
     "Symbol": "ADCT",
@@ -724,14 +688,6 @@
     "Name": "American Equity Investment Life Holding Company Common Stock"
   },
   {
-    "Symbol": "AEL^A",
-    "Name": "American Equity Investment Life Holding Company Depositary Shares each representing a 1/1000th interest in a share of 5.95% Fixed-Rate Reset Non-Cumulative Preferred Stock Series A"
-  },
-  {
-    "Symbol": "AEL^B",
-    "Name": "American Equity Investment Life Holding Company Depositary Shares each representing a 1/1000th interest in a share of 6.625% Fixed-Rate Reset Non-Cumulative Preferred Stock Series B"
-  },
-  {
     "Symbol": "AEM",
     "Name": "Agnico Eagle Mines Limited Common Stock"
   },
@@ -840,22 +796,6 @@
     "Name": "American Financial Group Inc. Common Stock"
   },
   {
-    "Symbol": "AFGB",
-    "Name": "American Financial Group Inc. 5.875% Subordinated Debentures due 2059"
-  },
-  {
-    "Symbol": "AFGC",
-    "Name": "American Financial Group Inc. 5.125% Subordinated Debentures due 2059"
-  },
-  {
-    "Symbol": "AFGD",
-    "Name": "American Financial Group Inc. 5.625% Subordinated Debentures due 2060"
-  },
-  {
-    "Symbol": "AFGE",
-    "Name": "American Financial Group Inc. 4.500% Subordinated Debentures due 2060"
-  },
-  {
     "Symbol": "AFIB",
     "Name": "Acutus Medical Inc. Common Stock"
   },
@@ -924,10 +864,6 @@
     "Name": "AGCO Corporation Common Stock"
   },
   {
-    "Symbol": "AGD",
-    "Name": "abrdn Global Dynamic Dividend Fund Common Shares of Beneficial Interest"
-  },
-  {
     "Symbol": "AGE",
     "Name": "AgeX Therapeutics Inc. Common Stock"
   },
@@ -980,52 +916,12 @@
     "Name": "Federal Agricultural Mortgage Corporation Common Stock"
   },
   {
-    "Symbol": "AGM^C",
-    "Name": "Federal Agricultural Mortgage Corporation Preferred Series C Fixed to Fltg"
-  },
-  {
-    "Symbol": "AGM^D",
-    "Name": "Federal Agricultural Mortgage Corporation 5.700% Non-Cumulative Preferred Stock Series D"
-  },
-  {
-    "Symbol": "AGM^E",
-    "Name": "Federal Agricultural Mortgage Corporation 5.750% Non-Cumulative Preferred Stock Series E"
-  },
-  {
-    "Symbol": "AGM^F",
-    "Name": "Federal Agricultural Mortgage Corporation 5.250% Non-Cumulative Preferred Stock Series F"
-  },
-  {
-    "Symbol": "AGM^G",
-    "Name": "Federal Agricultural Mortgage Corporation 4.875% Non-Cumulative Preferred Stock Series G"
-  },
-  {
     "Symbol": "AGMH",
     "Name": "AGM Group Holdings Inc. Class A Ordinary Shares"
   },
   {
     "Symbol": "AGNC",
     "Name": "AGNC Investment Corp. Common Stock"
-  },
-  {
-    "Symbol": "AGNCL",
-    "Name": "AGNC Investment Corp. Depositary Shares Each Representing a 1/1000th Interest in a Share of 7.75% Series G Fixed-Rate Reset Cumulative Redeemable Preferred Stock"
-  },
-  {
-    "Symbol": "AGNCM",
-    "Name": "AGNC Investment Corp. Depositary Shares rep 6.875% Series D Fixed-to-Floating Cumulative Redeemable Preferred Stock"
-  },
-  {
-    "Symbol": "AGNCN",
-    "Name": "AGNC Investment Corp. Depositary Shares Each Representing a 1/1000th Interest in a Share of 7.00% Series C Fixed-To-Floating Rate Cumulative Redeemable Preferred Stock"
-  },
-  {
-    "Symbol": "AGNCO",
-    "Name": "AGNC Investment Corp. Depositary Shares each representing a 1/1000th interest in a share of 6.50% Series E Fixed-to-Floating Cumulative Redeemable Preferred Stock"
-  },
-  {
-    "Symbol": "AGNCP",
-    "Name": "AGNC Investment Corp. Depositary Shares Each Representing a 1/1000th Interest in a Share of 6.125% Series F Fixed-to-Floating Rate Cumulative Redeemable Preferred Stock"
   },
   {
     "Symbol": "AGO",
@@ -1082,22 +978,6 @@
   {
     "Symbol": "AHH",
     "Name": "Armada Hoffler Properties Inc. Common Stock"
-  },
-  {
-    "Symbol": "AHH^A",
-    "Name": "Armada Hoffler Properties Inc. 6.75% Series A Cumulative Redeemable Perpetual Preferred Stock"
-  },
-  {
-    "Symbol": "AHL^C",
-    "Name": "Aspen Insurance Holdings Limited 5.95% Fixed-to-Floating Rate Perpetual Non-Cumulative Preference Shares"
-  },
-  {
-    "Symbol": "AHL^D",
-    "Name": "Aspen Insurance Holdings Limited 5.625% Perpetual Non-Cumulative Preference Shares"
-  },
-  {
-    "Symbol": "AHL^E",
-    "Name": "Aspen Insurance Holdings Limited Depositary Shares each representing a 1/1000th interest in a share of 5.625% Perpetual Non-Cumulative Preference Shares"
   },
   {
     "Symbol": "AHPA",
@@ -1172,10 +1052,6 @@
     "Name": "American International Group Inc. New Common Stock"
   },
   {
-    "Symbol": "AIG^A",
-    "Name": "American International Group Inc. Depositary Shares Each Representing a 1/1000th Interest in a Share of Series A 5.85% Non-Cumulative Perpetual Preferred Stock"
-  },
-  {
     "Symbol": "AIH",
     "Name": "Aesthetic Medical International Holdings Group Ltd. American Depositary Shares"
   },
@@ -1210,10 +1086,6 @@
   {
     "Symbol": "AINC",
     "Name": "Ashford Inc. (Holding Company) Common Stock"
-  },
-  {
-    "Symbol": "AIO",
-    "Name": "Virtus Artificial Intelligence & Technology Opportunities Fund Common Shares of Beneficial Interest"
   },
   {
     "Symbol": "AIP",
@@ -1351,10 +1223,7 @@
     "Symbol": "AL",
     "Name": "Air Lease Corporation Class A Common Stock"
   },
-  {
-    "Symbol": "AL^A",
-    "Name": "Air Lease Corporation 6.150% Fixed-to-Floating Rate Non-Cumulative Perpetual Preferred Stock Series A"
-  },
+
   {
     "Symbol": "ALB",
     "Name": "Albemarle Corporation Common Stock"
@@ -1448,22 +1317,6 @@
     "Name": "Allstate Corporation (The) Common Stock"
   },
   {
-    "Symbol": "ALL^B",
-    "Name": "Allstate Corporation (The) 5.100% Fixed-to-Floating Rate Subordinated Debentures due 2053"
-  },
-  {
-    "Symbol": "ALL^G",
-    "Name": "Allstate Corporation (The) Depositary Shares each representing a 1/1000th interest in a share of Fixed Rate Noncumulative Perpetual Preferred Stock Series G"
-  },
-  {
-    "Symbol": "ALL^H",
-    "Name": "Allstate Corporation (The) Depositary Shares each representing a 1/1000th interest in a share of Fixed Rate Noncumulative Perpetual Preferred Stock Series H"
-  },
-  {
-    "Symbol": "ALL^I",
-    "Name": "Allstate Corporation (The) Depositary Shares each representing a 1/1000th interest in a share of Fixed Rate Noncumulative Perpetual Preferred Stock Series I"
-  },
-  {
     "Symbol": "ALLE",
     "Name": "Allegion plc Ordinary Shares"
   },
@@ -1511,10 +1364,7 @@
     "Symbol": "ALOT",
     "Name": "AstroNova Inc. Common Stock"
   },
-  {
-    "Symbol": "ALP^Q",
-    "Name": "Alabama Power Company 5.00% Class A Preferred Stock Cumulative Par Value $1 Per Share (Stated Capital $25 Per Share)"
-  },
+
   {
     "Symbol": "ALPA",
     "Name": "Alpha Healthcare Acquisition Corp. III Class A Common Stock"
@@ -1576,10 +1426,6 @@
     "Name": "Alta Equipment Group Inc. Class A Common Stock"
   },
   {
-    "Symbol": "ALTG^A",
-    "Name": "Alta Equipment Group Inc. Depositary Shares (each representing 1/1000th in a share of 10% Series A Cumulative Perpetual Preferred Stock)"
-  },
-  {
     "Symbol": "ALTO",
     "Name": "Alto Ingredients Inc. Common Stock"
   },
@@ -1636,10 +1482,6 @@
     "Name": "Amalgamated Financial Corp. Common Stock (DE)"
   },
   {
-    "Symbol": "AMAM",
-    "Name": "Ambrx Biopharma Inc. American Depositary Shares (each representing seven Ordinary Shares)"
-  },
-  {
     "Symbol": "AMAO",
     "Name": "American Acquisition Opportunity Inc. Class A Common Stock"
   },
@@ -1658,10 +1500,6 @@
   {
     "Symbol": "AMBC",
     "Name": "Ambac Financial Group Inc. Common Stock"
-  },
-  {
-    "Symbol": "AMBO",
-    "Name": "Ambow Education Holding Ltd. American Depository Shares each representing two Class A ordinary shares"
   },
   {
     "Symbol": "AMBP",
@@ -1718,14 +1556,6 @@
   {
     "Symbol": "AMH",
     "Name": "American Homes 4 Rent Common Shares of Beneficial Interest"
-  },
-  {
-    "Symbol": "AMH^G",
-    "Name": "American Homes 4 Rent Series G cumulative redeemable perpetual preferred shares of beneficial interest"
-  },
-  {
-    "Symbol": "AMH^H",
-    "Name": "American Homes 4 Rent Series H cumulative redeemable perpetual Preferred Shares of Beneficial Interest"
   },
   {
     "Symbol": "AMK",
@@ -1838,10 +1668,6 @@
   {
     "Symbol": "AMTB",
     "Name": "Amerant Bancorp Inc. Class A Common Stock"
-  },
-  {
-    "Symbol": "AMTD",
-    "Name": "AMTD IDEA Group American Depositary Shares each representing one Class A Ordinary Share"
   },
   {
     "Symbol": "AMTI",

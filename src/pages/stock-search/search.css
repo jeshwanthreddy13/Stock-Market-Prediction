@@ -8,24 +8,40 @@
     border-radius: 5px;
     flex-wrap: wrap;
     min-width: 300px;
-  }
-  .Header {
-    width: 100%;
-    display: flex;
-    margin-bottom: 10px;
-  }
-  .ColDetail {
-    width: 70%;
-    float: left;
+    background-color: #ffffff;
+    text-align: center;
+    height: 25vh;
   }
   .StockName {
     font-size: 20px;
+    color: black;
+    height: 75%;
   }
   .Ticker {
-    color: #757575;
     font-size: 14px;
     margin-bottom:10px;
+    height: 25%;
   }
-  .Link {
-    font-size: 14px;
+  .sub{
+    background-color: rgb(142,14,0);
+    color: white;
+    border-radius: 30px;
+    padding: 10px;
+    width: 30%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .CardWrapper:hover{
+    background-color: rgb(142,14,0);
+    color: #ffffff;
+    -webkit-transition: background-color 500ms linear;
+    -ms-transition: background-color 500ms linear;
+    transition: background-color 500ms linear;
+  }
+  .CardWrapper:hover .StockName{
+    color: #ffffff;
+  }
+  .CardWrapper:hover .sub{
+    background-color: white;
+    color: rgb(142,14,0);
   }

@@ -33,6 +33,7 @@ const data = {
     stroke: {
       curve: 'straight'
     },
+    colors: ["#8e0e00"],
     title: {
       text: 'Credits Owned in The Past 10 Weeks',
       align: 'center'
@@ -51,18 +52,10 @@ const data = {
 
 };
 
-const stocks = [
-  { name: "Apple", open: 142.54, close: 140.09, high: 143.10, low: 139.44},
-  { name: "Amazon", open: 118.00, close: 114.56, high: 118.17, low: 113.88 },
-  { name: "Microsoft", open: 240.90, close: 234.24, high: 241.32, low: 233.17},
-  { name: "Tesla", open: 233.94, close: 223.37, high: 234.57, low: 222.02}
-]
-
-
 const Dashboard = () => {
   const [dashboard, setDashboard] = useState(null);
   const [state, setState] = useState(null);
-   
+  const [stock, setStock] = useState({stock : []});
   const logout = () => {
     /* eslint-disable */
     const toLogout = confirm("Are you sure you want to logout ?");
@@ -86,7 +79,7 @@ const Dashboard = () => {
       .then((res) => res.json())
       .then(({ error, data }) => {
         setDashboard(data);
-      });
+      })
   }, []);
 
   const GetArticles = async () => {
@@ -108,6 +101,20 @@ const Dashboard = () => {
   }
   a();
   }, []);
+
+  useEffect(() => {
+    fetch(`${config.baseUrl}/stocks/owned_stocks`, {
+      method: "GET",
+      headers: {
+        "auth-token": localStorage.getItem("token"),
+      },
+    })
+      .then((res) => (res.json()))
+      .then(({ error, data }) => {
+        setStock(data);
+      })
+    }
+  , []);
 
   return (
     <div className="d-wrapper">
@@ -131,24 +138,20 @@ const Dashboard = () => {
         </div>
       </div>
       <div className="stocks-owned">
-        <div className="table-title"><h2> Stocks You Own </h2><button><a href = {"owned_stock?id=" + dashboard?.user?.id} >Click to view all stocks</a></button></div>
+        <div className="table-title"><h2> Stocks You Own </h2><button><a href = "owned_stock">Click to view all stocks</a></button></div>
         <div className="s-table">
         <table>
           <tr>
             <th>Name</th>
-            <th>Open Price</th>
-            <th>Close Price</th>
-            <th>High</th>
-            <th>Low</th>
+            <th>Credits Invested</th>
+            <th>Stock Units</th>
           </tr>
-          {stocks.map((val, key) => {
+          {stock.stock.slice(0,4).map((val, key) => {
             return (
               <tr key={key}>
-                <td>{val.name}</td>
-                <td>{val.open}</td>
-                <td>{val.close}</td>
-                <td>{val.high}</td>
-                <td>{val.low}</td>
+                <td>{val.stock_name}</td>
+                <td>{val.credits_invested}</td>
+                <td>{val.stock_units}</td>
               </tr>
             )
           })}
