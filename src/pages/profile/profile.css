@@ -85,36 +85,36 @@
     transition: background-color 0.167s cubic-bezier(0.4, 0, 0.2, 1) 0s, box-shadow 0.167s cubic-bezier(0.4, 0, 0.2, 1) 0s, color 0.167s cubic-bezier(0.4, 0, 0.2, 1) 0s;   
 }
 
-.button-18:hover,
-.button-18:focus { 
+.button-18:hover { 
   background-color: #1f1c18;
   background: linear-gradient(90deg, #1f1c18 0%, rgba(31,28,24,1) 100%);
   color: #ffffff;
 }
 .container-top{
-    height: 52%;
+    height: 47%;
     background-color: white;
     margin-bottom: 5%;
     border-radius: 35px;
     margin-top: -4%;
-    padding: 5%;
+    padding: 3%;
     box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
 }
 .container-bottom{
-    height: 51%;
+    height: 55%;
     background-color: white;
     border-radius: 35px;
-    padding: 5%;
+    padding: 3%;
     box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
 }
 .container-top p{
     font-size: 20px;
     margin-left: 5%;
     width: 90%;
-    padding-bottom: 1.5%;
+    padding-bottom: 1%;
     border-bottom: solid grey 1px ;
 }
 .d-info{
+    font-size: 15px;
     margin-left: 5%;
     padding-bottom: 2%;
 }
@@ -124,7 +124,7 @@
 }
 .button-19 {
     letter-spacing: 2px;
-    margin-top: 1.5%;
+    margin-top: 1%;
     margin-left: 5%;
     align-items: center;
     background: #86190a;
@@ -134,19 +134,18 @@
     color: #ffffff;
     cursor: pointer;
     display: inline-flex;
-    font-size: 14px;
+    font-size: 12px;
     line-height: 20px;
     overflow: hidden;
-    padding: 5px;
+    padding: 3px;
     padding-left: 10px;
     padding-right: 10px;
     text-align: center;
     transition: background-color 0.167s cubic-bezier(0.4, 0, 0.2, 1) 0s, box-shadow 0.167s cubic-bezier(0.4, 0, 0.2, 1) 0s, color 0.167s cubic-bezier(0.4, 0, 0.2, 1) 0s;   
 }
-.button-19:hover,
-.button-19:focus { 
+.button-19:hover { 
     background: linear-gradient(90deg, #1f1c18 0%, rgba(31,28,24,1) 100%);
-  color: #ffffff;
+    color: #ffffff;
 }
 .container-bottom p{
     font-size: 20px;
@@ -184,3 +183,75 @@
     }
 
   }
+  .cb1 {
+    width: 100%;
+    height: 35%;
+    margin-bottom: 10px;
+    font-family: "Cabin";
+    margin-left: 2.5%;
+  }
+  .cb1 p{
+    font-size: 16px;
+    padding-bottom: 0;
+    border-bottom: none; 
+    text-decoration: underline;
+    letter-spacing: 2px;
+  }
+  .cb-data{
+    width: 60%;
+    float: left;
+  }
+  .cb1 .cb-desc{
+    font-size: 14px;
+    margin-top: -2%;
+    text-decoration: none;
+    letter-spacing: 0px;
+  }
+  .cb1 .cb-button{
+    width: 35%;
+    float: right;
+    height: 100%;
+    margin-right: 5%;
+    position: relative;
+  }
+  .cb-button .center{
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    width: 80%;
+    margin-left: 5%;
+  }
+  .button-cb{
+    width:80%;
+    letter-spacing: 2px;
+    border: none;
+    padding: 3%;
+    border-radius: 20px;
+    background: #86190a;
+    background: linear-gradient(90deg, #86190a 0%, rgba(31,28,24,1) 100%);
+    transition: background-color 0.167s cubic-bezier(0.4, 0, 0.2, 1) 0s, box-shadow 0.167s cubic-bezier(0.4, 0, 0.2, 1) 0s, color 0.167s cubic-bezier(0.4, 0, 0.2, 1) 0s;
+  }
+  .button-cb a{
+    color: white;
+    text-decoration: none;
+  }
+
+  .button-cb:hover { 
+    background: linear-gradient(90deg, #1f1c18 0%, rgba(31,28,24,1) 100%);
+    color: #ffffff;
+}
+.cb-button a:hover{
+    color: white;
+    text-decoration: none;
+}
+.modal-error{
+  color: #dc4c64;
+  font-size: 16px;
+}
+.form-control:focus{
+  border-color: #dc4c64 !important;
+  box-shadow: 0 0 0 0.1rem #dc4c64 !important;
+}

@@ -8,7 +8,10 @@
   
   .registrationFormLegend {
     width: 14rem;
-    background: #dee2e6;
+    background: #dc4c64;
+    border: none;
+    color: white;
+    border-radius: 5px;
   }
   .errorMessage {
     font-size: 12px;

@@ -1,8 +1,6 @@
 import React, { useState } from "react";
 import styles from "./signup.module.css";
-
 import { useForm } from "react-hook-form";
-import { Link } from "react-router-dom";
 import config from "../../config";
 
 const Signup = () => {
@@ -61,7 +59,7 @@ const Signup = () => {
             className={`${styles.registrationFormLegend} border rounded p-1 text-center`}
           >
             Registration Form
-          </legend>
+          </legend> <br/>
           <form onSubmit={handleSubmit(onSubmit)} noValidate autoComplete="off">
             <div className="form-group">
               <label htmlFor="inputForEmail">Email address</label>
@@ -179,14 +177,14 @@ const Signup = () => {
             </div>
             <br/>
             <div className="d-flex align-items-center justify-content-center">
-              <button type="submit" className="btn btn-outline-primary">
+              <button type="submit" className="btn btn-outline-danger">
                 Submit
               </button><br/>
-              </div> 
+              </div><br/> 
               <div className="d-flex align-items-center justify-content-center">
-              <button className="btn btn-link">
-                <Link to="/login">Already have an account?</Link>
-              </button>
+              <div className="d-flex align-items-center justify-content-center">
+                <a href="/login" className="link-danger">Already have an account?</a>
+            </div>
             </div>
           </form>
         </fieldset>

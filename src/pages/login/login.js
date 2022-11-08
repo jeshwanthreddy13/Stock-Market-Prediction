@@ -1,11 +1,8 @@
 
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-
 import styles from "./login.module.css";
-
 import { useForm } from "react-hook-form";
-import { Link } from "react-router-dom";
 import config from "../../config";
 
 const Login = () => {
@@ -112,14 +109,12 @@ const Login = () => {
               )}
             </div><br/>
             <div className="d-flex align-items-center justify-content-center">
-              <button type="submit" className="btn btn-outline-primary">
+              <button type="submit" className="btn btn-outline-danger">
                 Login
               </button>
-              </div> 
+              </div> <br/>
               <div className="d-flex align-items-center justify-content-center">
-              <button className="btn btn-link ml-auto">
-                <Link to="/register">New User</Link>
-              </button>
+                <a href="/register" className="link-danger">New User? Click to Register</a>
             </div>
           </form>
         </fieldset>

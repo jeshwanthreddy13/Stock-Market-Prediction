@@ -53,7 +53,7 @@ const data = {
 };
 
 const Dashboard = () => {
-  const [dashboard, setDashboard] = useState(null);
+  const [dashboard, setDashboard] = useState({});
   const [state, setState] = useState(null);
   const [stock, setStock] = useState({stock : []});
   const logout = () => {
@@ -69,7 +69,7 @@ const Dashboard = () => {
   };
 
   useEffect(() => {
-    fetch(`${config.baseUrl}/dashboard`, {
+    fetch(`${config.baseUrl}/profile/user_details`, {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
@@ -77,8 +77,9 @@ const Dashboard = () => {
       },
     })
       .then((res) => res.json())
-      .then(({ error, data }) => {
-        setDashboard(data);
+      .then(({ error, data, stock }) => {
+        console.log(data.user)
+        setDashboard(data.user);
       })
   }, []);
 
@@ -119,8 +120,8 @@ const Dashboard = () => {
   return (
     <div className="d-wrapper">
       <div className="navbar">
-        <p className="n-text"> Hello <b>{dashboard?.user?.name}</b>, Welcome Back!</p>
-        <a className="nav" href="/"><FcMoneyTransfer size="30px"/>&nbsp;&nbsp;10,000</a>
+        <p className="n-text"> Hello <b>{dashboard.name}</b>, Welcome Back!</p>
+        <a className="nav" href="/dashboard"><FcMoneyTransfer size="30px"/>&nbsp;&nbsp;{dashboard.credits}</a>
       </div>
       <div className="row-1">
         <div className="element credits-chart">
@@ -159,7 +160,7 @@ const Dashboard = () => {
         </div>
       </div>
       <div className = "sidebar">
-        <p className="s-text"><div className="s-icon"><FaUserCircle /></div><br/><div className="s-name">{dashboard?.user?.name}</div></p>
+        <p className="s-text"><div className="s-icon"><FaUserCircle /></div><br/><div className="s-name">{dashboard.name}</div></p>
         <div className="s-links">
           <a href="/dashboard"><div className="s-link"><div className="sl-icon"><AiFillHome/></div>Dashboard</div></a>
           <a href="/search"><div className="s-link"><div className="sl-icon"><RiStockFill/></div>Stocks</div></a>

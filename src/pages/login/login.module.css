@@ -8,8 +8,11 @@
   }
   
   .loginFormLegend {
-    width: 14rem;
-    background: #dee2e6;
+    width: 10rem;
+    background: #dc4c64;
+    border: none;
+    color: white;
+    border-radius: 5px;
   }
   
   .errorMessage {

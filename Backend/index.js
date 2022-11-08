@@ -3,6 +3,8 @@ const app = express();
 const authRoutes = require("./routes/auth");
 const dashboardRoutes = require("./routes/dashboard");
 const stockRoutes = require("./routes/stocks");
+const profileRoutes = require('./routes/profile');
+const predRoutes = require('./routes/pred');
 const verifyToken = require("./routes/validate-token");
 const mongoose = require("mongoose");
 const dotenv = require("dotenv");
@@ -26,5 +28,7 @@ process.env.DB_CONNECT,
 app.use("/api", authRoutes);
 app.use("/api/dashboard", verifyToken, dashboardRoutes);
 app.use("/api/stocks",  verifyToken, stockRoutes);
+app.use("/api/profile",  verifyToken, profileRoutes);
+app.use("/api/predictions", predRoutes);
 
 app.listen(3001, () => console.log("server is running..."));

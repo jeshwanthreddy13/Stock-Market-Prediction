@@ -2,8 +2,10 @@ var request = require('request-promise');
 const router = require("express").Router();
 const Stock = require("../model/Stock");
 const User = require("../model/User");
+const yf = require("yahoo-stock-prices")
 
 router.get("/", async (req, res) => {
+        console.log("Hi")
         var data = {
             ticker: req.query.stock
         }
@@ -51,5 +53,10 @@ router.get("/", async (req, res) => {
   }
 });
 
+router.get('/get_price', async(req,res) => {
+  const ticker = req.header("ticker");
+  const data = await yf.getCurrentData(ticker);
+  res.json({"price": data.price})
+})
 
 module.exports = router;

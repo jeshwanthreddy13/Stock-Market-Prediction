@@ -29,6 +29,10 @@ const userSchema = new mongoose.Schema({
     type: Date,
     default: Date.now,
   },
+  credits: {
+    type: Number,
+    default: 10000,
+  },
 });
 
 module.exports = mongoose.model("User", userSchema);
