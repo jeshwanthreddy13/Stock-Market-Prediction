@@ -3,6 +3,8 @@ const User = require("../model/User");
 const { registerValidation, loginValidation } = require("../validation");
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
+const Transaction = require("../model/Transaction");
+
 
 router.post("/register", async (req, res) => {
     const { error } = registerValidation(req.body)
@@ -23,8 +25,13 @@ router.post("/register", async (req, res) => {
         password: hashPassword,
         phone: req.body.phone
   });
+  const transaction = new Transaction({
+        email: req.body.email,
+        transactions: []
+  })
   try {
     const savedUser = await user.save();
+    const transSave = await transaction.save();
     res.json({ error: null, data: savedUser });
   } catch (error) {
     res.status(400).json({ error });

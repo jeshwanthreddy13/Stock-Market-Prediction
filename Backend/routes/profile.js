@@ -23,24 +23,31 @@ router.get("/user_details", async (req, res) => {
     })
 });
 
-router.get("/edit_profile", async (req, res) => {
+router.post("/edit_profile", async (req, res) => {
     const id = (req.user.id)
     const old_user = await User.findById(id)
     const ou_email = old_user.email
-    var upd_name = req.header("name")
-    var upd_email = req.header("email")
-    var upd_phone = req.header("phone")
-    var upd_password = req.header("password")
-    if(upd_email == ""){
+    var upd_name = req.body.name
+    var upd_email = req.body.email
+    var upd_phone = req.body.phone
+    var upd_password = req.body.password
+    console.log(upd_name,upd_password,upd_email)
+    if(upd_email == undefined || upd_email == ''){
         upd_email = old_user.email
     }
-    if(upd_name == ""){
+    else{
+        const check = await User.findOne({email: upd_email })
+        if(check){
+            upd_email = old_user.email
+        }
+    }
+    if(upd_name == undefined || upd_name == '' ){
         upd_name = old_user.name
     }
-    if(upd_phone == ""){
+    if(upd_phone == undefined || upd_phone == ''){
         upd_phone = old_user.phone
     }
-    if(upd_password == ""){
+    if(upd_password == undefined || upd_password == ''){
         upd_password = old_user.password
     }
     else{

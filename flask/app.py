@@ -8,7 +8,6 @@ app = Flask(__name__)
 
 @app.route("/members" , methods = ['GET'])
 def members():
-    print("Hi")
     data = request.get_json() 
     ticker = (data["ticker"]).upper()
     df = yf.download(tickers=ticker, period='1d', interval='2m')

@@ -47,15 +47,15 @@ const Profile = () => {
         }
         if (k === 0){
             fetch(`${config.baseUrl}/profile/edit_profile`, {
-                method: "GET",
+                method: "POST",
                 headers: {
                   "Content-Type": "application/json",
-                  "auth-token": localStorage.getItem("token"),
-                  "name": name.val,
-                  "email": email.val,
-                  "phone": phone.val,
-                  "password": pass.val,
+                  "auth-token": localStorage.getItem("token")
                 },
+                body: JSON.stringify({"name": name.val,
+                "email": email.val,
+                "phone": phone.val,
+                "password": pass.val})
               })
               .then((res) => res.json())
              .then(({ message }) => {

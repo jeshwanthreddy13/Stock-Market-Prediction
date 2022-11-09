@@ -3,7 +3,6 @@ const Pred = require("../model/Prediction")
 var request = require('request-promise');
 
 router.get("/", async (req, res) => {
-
     var options = {
         method: 'GET',
         uri: 'http://localhost:5000/predictions'

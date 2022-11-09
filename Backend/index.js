@@ -8,13 +8,17 @@ const predRoutes = require('./routes/pred');
 const verifyToken = require("./routes/validate-token");
 const mongoose = require("mongoose");
 const dotenv = require("dotenv");
-const cors = require("cors");
+
+const cors = require('cors');
+app.use(cors({
+    origin: 'http://localhost:3000',
+    methods: ['GET','POST','DELETE','UPDATE','PUT','PATCH']
+}));
 
 dotenv.config();
 app.use(express.json());
 
 dotenv.config();
-app.use(cors());
 
 mongoose.connect(
 process.env.DB_CONNECT,
