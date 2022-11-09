@@ -130,7 +130,7 @@ const Stock = () => {
     return (
         <>
             <Navbar /> 
-            <h2>Data for {queryParams.get('stock')} Stocks</h2>
+            <h2>Data for {queryParams.get('stock').toUpperCase()} Stocks</h2>
             <div className="candle-chart"><Chart options={options} series={options.series} type="candlestick" height={"100%"} width={"100%"} /></div>
             <button className='buy-stocks' onClick={handleShow}> Buy </button>
             <Modal show={show} onHide={handleClose} backdrop="static">
@@ -139,9 +139,10 @@ const Stock = () => {
               </Modal.Header>
               <Modal.Body>
                 <Form>
-                  <h4>How many units of {queryParams.get('stock')} do you want to?</h4>
+                  <h4>How many units of {queryParams.get('stock').toUpperCase()} do you want to?</h4>
                   <h5>Current Price: {price}</h5>
                   <h5>Your Available Credits: {credits}</h5>
+                  <h5 className='note'>Note: An additional fee of 20 credits + 0.5% of trade value is deducted.</h5>
                   <p className="modal-error">{message}</p>
                   <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
                     <Form.Control

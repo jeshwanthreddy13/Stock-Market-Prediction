@@ -99,7 +99,7 @@ const OwnedStock = () => {
               {dashboard.stock.map((val, key) => {
                 return (
                   <tr key={key}>
-                    <td>{val.stock_name}</td>
+                    <td>{val.stock_name.toUpperCase()}</td>
                     <td>{val.credits_invested}</td>
                     <td>{val.stock_units}</td>
                     <td><button className="sell-button" onClick={() => {
@@ -122,6 +122,8 @@ const OwnedStock = () => {
                 <Form>
                   <h4>How many units of {name} do you want to sell?</h4>
                   <h5>Number of Stocks Available: {units}</h5>
+                  <h5>Current Price: {price}</h5>
+                  <h5 className='note'>Note: An additional fee of 20 credits + 0.5% of trade value is deducted.</h5>
                   <p className="modal-error">{message}</p>
                   <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
                     <Form.Control

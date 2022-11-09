@@ -109,6 +109,7 @@ const Profile = () => {
                         <div className='d-info'>Total Amount of Credits Invested: {stock.total}</div>
                         <div className='d-info'>Number of Stocks Owned: {stock.no}</div>
                         <button className="button-19"><a href = "owned_stock">Owned Stocks</a></button>
+                        <button className="button-19"><a href = "transactions">Show Transactions</a></button>
                     </div>
                     <div className='container-bottom'>
                         <p>Trade Recommendations</p>

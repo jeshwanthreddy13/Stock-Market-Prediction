@@ -1,0 +1,33 @@
+.Buy{
+    color: green;
+}
+.Sell{
+    color:red;
+}
+.trans-head{
+    text-align: center;
+    padding: 4%;
+    font-size: 34px;
+}
+.transaction-table{
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+.transaction-table thead {
+    background-image: radial-gradient(100% 100% at 100% 0, #1f1c18 0, #86190a 100%);
+}
+.transaction-table th {
+    padding: 1%;
+    color: white;
+}
+.transaction-table td {
+    padding: 20px;
+    border-bottom: solid #1f1c18 1px;
+    margin-bottom: 10px;
+    background-color: #ffffff;
+    font-weight: 600;
+    font-size: 16px;
+}

@@ -9,6 +9,8 @@ import Navbar from './pages/navbar/nav';
 import OwnedStock from './pages/owned-stock/owned-stock';
 import Profile from './pages/profile/profile';
 import Predictions from './pages/predictions/prediction';
+import Transactions from './pages/transactions/transaction';
+import Trends from './pages/trends/trends'
 
 function App() {
   return (
@@ -25,6 +27,8 @@ function App() {
         <Route path='/owned_stock' element={ <OwnedStock />}/>
         <Route path='/profile' element={ <Profile />}/>
         <Route path='/predictions' element= { <Predictions/> } />
+        <Route path='/transactions' element= { <Transactions/> } />
+        <Route path='/trends' element= { <Trends/> } />
         <Route exact path = "*" element={localStorage.getItem("token") ? (<Dashboard />) : (<Navigate replace to={"/login"} />)} />
       </Routes>
     </Router>

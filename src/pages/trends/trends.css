@@ -1,0 +1,77 @@
+@import url("https://fonts.googleapis.com/css?family=Comfortaa");
+.trends {
+    margin: 1rem;
+    padding: 2rem 2rem;
+    text-align: center;
+    height: 89vh
+  }
+  .trends-child {
+    display: inline-block;
+    padding: 1rem 1rem;
+    vertical-align: middle;
+    width: 44%;
+    margin: 2%;
+    height: 95%;
+    border-radius: 35px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+  }
+  .trends-child h2{
+    text-align: left;
+    margin-left: 5%;
+    font-family: 'Comfortaa';
+  }
+  .trends-child p{
+    margin-top: -3%;
+    text-align: left;
+    margin-left: 5%;
+  }
+  .trends-child img{
+    margin-left: -40%;
+    border-radius: 30px;
+    margin-top: 1%;
+    text-align: left;
+    width:50%;
+    height: 35%;
+  }
+
+.view-more {
+  font-size: 16px;
+  margin-top: 3%;
+  font-weight: 200;
+  letter-spacing: 1px;
+  padding: 13px 20px 13px;
+  outline: 0;
+  border: 1px solid black;
+  cursor: pointer;
+  position: relative;
+  background-color: rgba(0, 0, 0, 0);
+  color: white;
+  margin-left: -65%;
+}
+
+.view-more:after {
+  content: "";
+  background: linear-gradient(90deg, #86190a 0%, rgba(31,28,24,1) 100%);
+  width: 100%;
+  z-index: -1;
+  position: absolute;
+  height: 100%;
+  top: 7px;
+  left: 7px;
+  transition: 0.2s;
+  color: white;
+}
+
+.view-more:hover:after {
+  top: 0px;
+  left: 0px;
+  color: white;
+}
+
+.view-more a{
+    color: white;
+    text-decoration: none;
+}
+.view-more:hover a{
+    color: white;
+}

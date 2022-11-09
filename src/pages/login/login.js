@@ -115,7 +115,7 @@ const Login = () => {
               </div> <br/>
               <div className="d-flex align-items-center justify-content-center">
                 <a href="/register" className="link-danger">New User? Click to Register</a>
-            </div>
+              </div>
           </form>
         </fieldset>
       </div>

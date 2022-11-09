@@ -147,10 +147,10 @@ const Dashboard = () => {
             <th>Credits Invested</th>
             <th>Stock Units</th>
           </tr>
-          {stock.stock.slice(0,4).map((val, key) => {
+          {stock.stock.slice(0,3).map((val, key) => {
             return (
               <tr key={key}>
-                <td>{val.stock_name}</td>
+                <td>{val.stock_name.toUpperCase()}</td>
                 <td>{val.credits_invested}</td>
                 <td>{val.stock_units}</td>
               </tr>
