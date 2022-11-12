@@ -34,7 +34,6 @@ const Card = ({Name,Symbol}) => {
             
             <div className="Ticker">
               <button className="sub" onClick={handleClick}>{addbutton}</button>
-
             </div>
         
         

@@ -17,12 +17,10 @@ from typing import List, Union
  
 def create_directory_tree(mode: str,experimental: bool,checkpoint_directory: str):
 
-    date: str = datetime.now().strftime("%Y.%m.%d.%H.%M.%S")
-    print(date)
     if experimental:
         checkpoint_directory = os.path.join("saved_outputs", "experimental")
     else:
-        checkpoint_directory = os.path.join("saved_outputs", date) if mode=='train' else checkpoint_directory
+        checkpoint_directory = os.path.join("rl//saved_outputs", "last_output") if mode=='train' else checkpoint_directory
     
     # Create various subdirectories
     checkpoint_directory_networks = os.path.join(checkpoint_directory, "networks")

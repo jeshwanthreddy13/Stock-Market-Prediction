@@ -7,6 +7,9 @@ import SearchBar from "./portfolio_search_bar";
 import Amount from "./portfolio_amount";
 import Fuse from "fuse.js";
 import Navbar from "../navbar/nav";
+import {FaDollarSign} from "react-icons/fa";
+
+
 
 export default function Search (){
   var filtered = Data.filter(function(item) { 
@@ -38,18 +41,53 @@ export default function Search (){
       setData(matches);
     }
   };
-  
 
-      
+  const [name, setName] = useState('');
+  const [tickers, setTickers] = useState([]);
+  const handleClick = (Symbol) => {
+    if (tickers.indexOf(Symbol)==-1){
+      setTickers([...tickers,Symbol]);
+    }
+
+  }
+  const [amount, setAmount] = useState('');
+  const [message, setMessage] = useState(''); 
+  const handleChange = event => {
+      setAmount(event.target.value)
+      console.log('value is:', event.target.value);
+  }
+  const handleRecommendations = () =>{
+    if (parseInt(amount)<1000){
+      alert("Please enter amount greater than 1000");
+    }
+    if (tickers.length==0){
+      alert("Please select atleast one stock");
+    }
+    else{
+      console.log("hello");
+    }
+  }  
 
   return (
 
       <div className="stock-wrap">
         <Navbar />
+        <button className="recommendations" onClick={handleRecommendations}>Get recommendations</button>
         <h1 className="Title2">Amount to Trade </h1>
         <div className="amountbar">
-        <Amount placeholder="Enter the amount to trade min:1000"  
-        />
+        <div className="Amount">
+            <span className="AmountSpan">
+            <FaDollarSign />
+            </span>
+            <input
+            className="AmountInput"
+            type="number"
+            min="1000"
+            onChange={handleChange}
+            placeholder="Enter the credits to trade"
+            />
+                
+        </div>
         
         </div>
         <h1 className="Title" >Assets To Trade</h1>
@@ -59,9 +97,26 @@ export default function Search (){
           onChange={(e) => searchData(e.target.value)}
         />
         </div>
+        <div className="selectedList">
+        <ul>
+              {tickers.map(ticker => (
+                <li key={ticker}>{ticker}</li>
+              ))}
+        </ul>
+        </div>
+        
       <div className="Container">
         {data.map((item) => (
-          <Card {...item} key={item.Symbol} />
+          <div className="CardWrapper">
+          <div className="StockName">{item.Name}
+          </div>
+          
+          <div className="Ticker">
+            <button className="sub" onClick={() => {
+              setName(item.Symbol)
+              handleClick(item.Symbol)}}>ADD</button>
+          </div>
+        </div>
         ))}
       </div>
       </div>
