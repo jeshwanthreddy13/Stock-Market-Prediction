@@ -1,0 +1,78 @@
+[
+  {
+    "Symbol": "AAPL",
+    "Name": "Apple Inc"
+  },
+  {
+    "Symbol": "TSLA",
+    "Name": "Tesla Inc"
+  },
+  {
+    "Symbol": "MSFT",
+    "Name": "Microsoft Corp"
+  },
+  {
+    "Symbol": "VZ",
+    "Name": "Verizon Communications Inc."
+  },
+  {
+    "Symbol": "AMZN",
+    "Name": "Amazon.com, Inc"
+  },
+  {
+    "Symbol": "BA",
+    "Name": "Boeing Co"
+  },
+  {
+    "Symbol": "MS",
+    "Name": "Morgan Stanley"
+  },
+  {
+    "Symbol": "DB",
+    "Name": "Deutsche Bank AG"
+  },
+  {
+    "Symbol": "JPM",
+    "Name": "JPMorgan Chase & Co"
+  },
+  {
+    "Symbol": "META",
+    "Name": "Meta Platforms Inc"
+  },
+  {
+    "Symbol": "INTC",
+    "Name": "Intel Corporation"
+  },
+  {
+    "Symbol": "GS",
+    "Name": "Goldman Sachs Group Inc"
+  },
+  {
+    "Symbol": "HPE",
+    "Name": "Hewlett Packard Enterprise Co"
+  },
+  {
+    "Symbol": "TCS",
+    "Name": "Tata Consultancy Services"
+  },
+  {
+    "Symbol": "WMT",
+    "Name": "Walmart Inc"
+  },
+  {
+    "Symbol": "T",
+    "Name": "AT&T Inc"
+  },
+  {
+    "Symbol": "TGT",
+    "Name": "Target Corporation"
+  },
+  {
+    "Symbol": "WFC",
+    "Name": "Wells Fargo & Co"
+  },
+  {
+    "Symbol": "V",
+    "Name": "Visa Inc"
+  }
+]

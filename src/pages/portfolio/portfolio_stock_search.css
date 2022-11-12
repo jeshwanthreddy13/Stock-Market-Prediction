@@ -1,0 +1,34 @@
+.Container {
+    width: 100%;
+    margin: 0 auto;
+    margin-left: 25px;
+    margin-top: 45px;
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .Title {
+    text-align: center;
+    padding-top: 5%;
+    padding-bottom: 3%;
+  }
+  .Title2 {
+    text-align: center;
+    padding-top: 5%;
+    padding-bottom: 3%;
+  }
+  .Submit1{
+    margin-right: 38%;
+    margin-top: 5px;
+    border-radius: 30px;
+    margin-bottom: 3%;
+    float: right;
+    margin-left: 10px;
+    background-color: rgb(142,14,0);
+    border-color: transparent;
+    color: white;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+  .stock-wrap{
+
+  }

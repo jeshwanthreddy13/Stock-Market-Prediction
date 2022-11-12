@@ -8,6 +8,7 @@ const predRoutes = require('./routes/pred');
 const verifyToken = require("./routes/validate-token");
 const mongoose = require("mongoose");
 const dotenv = require("dotenv");
+const rlRoutes = require("./routes/rl")
 
 const cors = require('cors');
 app.use(cors({
@@ -34,5 +35,6 @@ app.use("/api/dashboard", verifyToken, dashboardRoutes);
 app.use("/api/stocks",  verifyToken, stockRoutes);
 app.use("/api/profile",  verifyToken, profileRoutes);
 app.use("/api/predictions", predRoutes);
+app.use("/api/rl",rlRoutes)
 
 app.listen(3001, () => console.log("server is running..."));

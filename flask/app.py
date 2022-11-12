@@ -1,8 +1,10 @@
 from flask import Flask,request
 import yfinance as yf
 from lstm import call
-from datetime import datetime,timedelta
+from datetime import datetime,timedelta,date
 import json
+from rl.src.get_data import load_data
+
 
 app = Flask(__name__)
 
@@ -26,3 +28,13 @@ def predictions():
     fp = []
     fp = (call(end_date,fp,tickers))
     return json.dumps({"stocks" : fp})
+
+@app.route("/download_data", methods = ['GET'])
+def download():
+    result=load_data("2010-01-01", 
+              datetime.now().strftime("%Y-%m-%d"), 
+              '',False,
+              'train')
+    return json.dumps({"message": "done"})
+
+    
