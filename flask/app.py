@@ -36,5 +36,4 @@ def download():
               '',False,
               'train')
     return json.dumps({"message": "done"})
-
     

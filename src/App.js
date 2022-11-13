@@ -12,6 +12,7 @@ import Profile from './pages/profile/profile';
 import Predictions from './pages/predictions/prediction';
 import Transactions from './pages/transactions/transaction';
 import Trends from './pages/trends/trends'
+import SandR from './pages/trends/support_and_resistance';
 
 function App() {
   return (
@@ -31,6 +32,7 @@ function App() {
         <Route path='/portfolio' element= { <Portfolio/> } />
         <Route path='/transactions' element= { <Transactions/> } />
         <Route path='/trends' element= { <Trends/> } />
+        <Route path='/support-and-resistance' element={<SandR />} />
         <Route exact path = "*" element={localStorage.getItem("token") ? (<Dashboard />) : (<Navigate replace to={"/login"} />)} />
       </Routes>
     </Router>
