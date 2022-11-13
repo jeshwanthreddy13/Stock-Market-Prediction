@@ -4,6 +4,7 @@ import pandas as pd
 from pathlib import Path
 from typing import List
 import yfinance as yf
+import sys
 
 class DataFetcher():
     
@@ -91,32 +92,7 @@ def load_data(initial_date: str,
               read: True,
               mode: str = 'test') -> pd.DataFrame:
     stocks_symbols=['AAPL','TSLA','MSFT','VZ','AMZN','BA','MS','DB','JPM','META','INTC','GS','HPE','TCS','WMT','T','TGT','WFC','V']
-    
 
-    #with open('portfolios_and_tickers/tickers_S&P500.txt') as f:
-        #stocks_symbols = f.read().splitlines()
-      
-    '''if not os.path.exists('rl\data\\'):  
-        
-        print('\n>>>>> Fetching the data <<<<<')
-        
-        fetcher = DataFetcher(stock_symbols=stocks_symbols,
-                              start_date=initial_date,
-                              end_date=final_date,
-                              directory_path="data")
-        
-        fetcher.fetch_and_merge_data()
-    
-    if not os.path.exists('rl\data\\close.csv'):
-        
-        print('>>>>> Extracting close prices <<<<<')
-        
-        preprocessor = Preprocessor(df_directory='data',
-                                    file_name='stocks.csv')
-    
-        df = preprocessor.collect_close_prices()
-        df = preprocessor.handle_missing_values()
-    '''
     if not read:
         if os.path.exists("rl\data\\stocks.csv"):
             os.remove("rl\data\\stocks.csv")
@@ -127,8 +103,7 @@ def load_data(initial_date: str,
                  final_date,
                  "rl\data")
         r.fetch_and_merge_data()
-        p= Preprocessor(df_directory='rl\data',
-                                    file_name='stocks.csv')
+        p= Preprocessor(df_directory='rl\data',file_name='stocks.csv')
     
         d = p.collect_close_prices()
         d = p.handle_missing_values()
@@ -137,8 +112,6 @@ def load_data(initial_date: str,
         print('\n>>>>> Reading the data <<<<<')
         
         df = pd.read_csv('rl\data\\close.csv', index_col=0)
-        
-        # We select the tickers we want to focus on, reading them form a list of tickers text file.
         with open(tickers_subset) as f:
             stocks_subset = f.read().splitlines()
             stocks_subset = [ticker for ticker in stocks_subset if ticker in df.columns]

@@ -1,5 +1,4 @@
 
-
 from argparse import ArgumentParser
 import json 
 import numpy as np
@@ -39,8 +38,9 @@ def main(args):
     
     # downloading, preprocessing and loading the multidimensional time series into a dataframe
     df = load_data(initial_date=args.initial_date, 
-                   final_date=args.final_date, 
+                   final_date=args.final_date,
                    tickers_subset=args.assets_to_trade,
+                   read=True,
                    mode=args.mode)
     
     if args.mode == 'test' and args.initial_date is not None and args.final_date is not None:
@@ -101,8 +101,8 @@ if __name__ == '__main__':
     # parameters defining the trading environment
     group1 = parser.add_mutually_exclusive_group()
     group1.add_argument('--initial_cash',      type=float, default=100000,         help='Initial cash in the bank, assuming no shares are owned')
-    group1.add_argument('--initial_portfolio', type=str,   default='./portfolios_and_tickers/initial_portfolio.json', help='Path to json file containing the content of an initial portfolio, including the cash in bank')
-    parser.add_argument('--assets_to_trade',   type=str,   default='./portfolios_and_tickers/tickers_S&P500.txt',     help='List of the tickers of the assets to be traded')
+    group1.add_argument('--initial_portfolio', type=str,   default='rl/portfolios_and_tickers/initial_portfolio.json', help='Path to json file containing the content of an initial portfolio, including the cash in bank')
+    parser.add_argument('--assets_to_trade',   type=str,   default='rl/portfolios_and_tickers/userdata.txt',     help='List of the tickers of the assets to be traded')
     parser.add_argument('--buy_rule',          type=str,   default='most_first', help="In which order to buy the share: 'most_first' or 'cyclic' or 'random'")
     parser.add_argument('--buy_cost',          type=float, default=0.001,        help='Cost for buying a share, prorata of the quantity being bought')
     parser.add_argument('--sell_cost',         type=float, default=0.001,        help='Cost for selling a share, prorata of the quantity being sold')
@@ -135,7 +135,7 @@ if __name__ == '__main__':
     parser.add_argument('--experimental', action='store_true',     help='Saves all outputs in an overwritten directory, used simple experiments and tuning')
     
     # random seed, logs information and hardware
-    parser.add_argument('--checkpoint_directory', type=str,            default=None,         help='In test mode, specify the directory in which to find the weights of the trained networks')
+    parser.add_argument('--checkpoint_directory', type=str,            default='rl/',         help='In test mode, specify the directory in which to find the weights of the trained networks')
     parser.add_argument('--plot',                 action='store_true', default=False,        help='Whether to automatically generate plots or not')
     parser.add_argument('--seed',                 type=int,            default='42',         help='Random seed for reproducibility')
     parser.add_argument('--gpu_devices',          type=int, nargs='+', default=[0, 1, 2, 3], help='Specify the GPUs if any')

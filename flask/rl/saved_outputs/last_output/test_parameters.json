@@ -1,7 +1,7 @@
 {
-    "initial_cash": 100000,
-    "initial_portfolio": "portfolios_and_tickers/initial_portfolio_subset.json",
-    "assets_to_trade": "portfolios_and_tickers/tickers_S&P500_subset.txt",
+    "initial_cash": 500.0,
+    "initial_portfolio": "rl/portfolios_and_tickers/initial_portfolio.json",
+    "assets_to_trade": "rl/portfolios_and_tickers/userdata.txt",
     "buy_rule": "most_first",
     "buy_cost": 0.001,
     "sell_cost": 0.001,
@@ -24,7 +24,7 @@
     "n_episodes": 1,
     "mode": "test",
     "experimental": false,
-    "checkpoint_directory": "saved_outputs/2022.11.09.12.47.18",
+    "checkpoint_directory": "rl\\saved_outputs\\last_output",
     "plot": true,
     "seed": 42,
     "gpu_devices": [

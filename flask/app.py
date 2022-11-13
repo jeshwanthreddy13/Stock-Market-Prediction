@@ -4,6 +4,9 @@ from lstm import call
 from datetime import datetime,timedelta,date
 import json
 from rl.src.get_data import load_data
+import os
+import numpy as np
+import pandas as pd
 
 
 app = Flask(__name__)
@@ -36,4 +39,36 @@ def download():
               '',False,
               'train')
     return json.dumps({"message": "done"})
+
+@app.route("/get_recommendations", methods = ['POST'])
+def recommendations():
+    data=request.get_json()
+    print(type(data['tickers']))
+    with open("rl\portfolios_and_tickers\initial_portfolio_subset.json", "r") as jsonFile:
+        change = json.load(jsonFile)
+
+    change["Bank_account"] = data['amount']
+
+    with open("rl\portfolios_and_tickers\initial_portfolio_subset.json", "w") as jsonFile:
+        json.dump(change, jsonFile)
+
+    with open('rl\portfolios_and_tickers\\userdata.txt', 'w+') as f:
+    
+        for items in data['tickers']:
+            f.write('%s\n' %items)
+    os.system(r"python rl\src\\main.py --initial_cash "+str(data['amount'])+" --mode train --n_episodes 5  --plot")
+    os.system(r"python rl\src\\main.py --initial_cash "+str(data['amount'])+" --mode test --n_episodes 1 --plot")
+    b = np.load('rl\saved_outputs\last_output\logs\\test_portfolio_content_history.npy')
+    c = np.load('rl\saved_outputs\last_output\logs\\test_portfolio_value_history.npy')
+    with open('rl\\portfolios_and_tickers\\userdata.txt', 'r') as f:
+        lines = f.readlines()
+        tickers_b = []
+        for l in lines:
+            tickers_b.append(l.replace("\n", ""))
+    df_b = pd.DataFrame(data=b[-1], columns=tickers_b)
+    print(df_b)
+    print(c)
+    
+    return json.dumps({"message": "done"})
+
     
