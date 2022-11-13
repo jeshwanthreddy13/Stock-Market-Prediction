@@ -42,11 +42,11 @@
 }
 
 .snr-hidden{
-    width: 90%;
+    width: 100%;
     margin-right: auto;
     margin-left: auto;
     margin-top: 3%;
-    height: 60vh;
+    height: 100vh;
     margin-bottom: 3%;
     box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
 }

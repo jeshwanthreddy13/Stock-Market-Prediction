@@ -9,8 +9,10 @@ const verifyToken = require("./routes/validate-token");
 const mongoose = require("mongoose");
 const dotenv = require("dotenv");
 const rlRoutes = require("./routes/rl")
-
+const snrRoutes = require("./routes/snr")
 const cors = require('cors');
+
+
 app.use(cors({
     origin: 'http://localhost:3000',
     methods: ['GET','POST','DELETE','UPDATE','PUT','PATCH']
@@ -36,5 +38,6 @@ app.use("/api/stocks",  verifyToken, stockRoutes);
 app.use("/api/profile",  verifyToken, profileRoutes);
 app.use("/api/predictions", predRoutes);
 app.use("/api/rl",rlRoutes)
+app.use("/api/snr", snrRoutes)
 
 app.listen(3001, () => console.log("server is running..."));

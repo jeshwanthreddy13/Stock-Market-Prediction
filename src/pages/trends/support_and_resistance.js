@@ -3,31 +3,50 @@ import { useState } from "react";
 import Navbar from "../navbar/nav";
 import './support_and_resistance.css';
 import { Chart } from "react-google-charts";
+import config from "../../config";
 
 const SandR = () =>{
     const [value,setValue] = useState("")
     const [show, setShow] = useState(false);
-
+    const [support,setSupport] = useState([])
+    const [resistance,setResistance] = useState([])
+    const [s_option,setSoptions] = useState({})
+    const [r_option,setRoptions] = useState({})
     const handleChange =(e) => {
         setValue(e.target.value)
     }
 
-    const handleClick = () => {
+    const handleClick = async () => {
         console.log(value)
+        if(value === "" || value ==="Choose a Ticker"){
+            alert("Choose a Valid Ticker")
+        }
+        else{
+        const response = await fetch(
+            `${config.baseUrl}/snr?stock=${value}`, {
+              method: "GET"}
+        );
+        const json = await response.json();
+        console.log(json)
+        setSupport(json['support'])
+        setResistance(json['resistance'])
+        setSoptions(json["so"])
+        setRoptions(json["ro"])
         setShow(true)
+    }
     }
 
     const handleClose = () =>{
         setShow(false)
     }
-
     return(
         <>
             <Navbar/>
             <h1 className="snr-title">Support and Resistance</h1>
             <div className="snr-search">
                 <select className="snr-select" value={value} onChange={handleChange} >
-                    <option value="AAPL" default>AAPL</option>
+                    <option>Choose a Ticker</option>
+                    <option value="AAPL">AAPL</option>
                     <option value="TSLA">TSLA</option>
                     <option value="MSFT">MSFT</option>
                     <option value="VZ">VZ</option>
@@ -53,26 +72,37 @@ const SandR = () =>{
                 {show ? (
                     <div className="snr-hidden">
                         <button onClick={handleClose}>Close Graph</button>
-                        <p>Support and Resistance Bands for {value}</p>
+                        <p>Support Graph</p>
                         <Chart
-                            width={"500px"}
-                            height={"300px"}
+                            width={"100%"}
+                            height={"80%"}
                             chartType="CandlestickChart"
-                            loader={<div>Loading Chart</div>}
-                            data={[
-                            ["day", "a", "b", "c", "d", "Medium", "medium2"],
-                            ["2004/05", 0, 0, 40, 40, 450, 682],
-                            ["2005/06", 135, 1120, 599, 1268, 450, 682],
-                            ["2006/07", 157, 1167, 587, 807, 450, 682],
-                            ["2007/08", 139, 1110, 615, 968, 450, 682],
-                            ["2008/09", 136, 691, 629, 1026, 450, 682]
-                            ]}
-                            options={{
-                            series: {
-                                1: { type: "line" },
-                                2: { type: "line" }
-                            }
+                            data={support}
+                              options={{
+                                series : s_option,
+                                legend: "none",
+                                bar: { groupWidth: "100%" }, 
+                                candlestick: {
+                                    fallingColor: { strokeWidth: 0, fill: "#a52714" }, 
+                                    risingColor: { strokeWidth: 0, fill: "#0f9d58" },
+                                },
                             }}
+                        />
+                        <p>Resistance Graph</p>
+                        <Chart
+                            width={"100%"}
+                            height={"80%"}
+                            chartType="CandlestickChart"
+                            data={resistance}
+                              options={{
+                                series: r_option,
+                                legend: "none",
+                                bar: { groupWidth: "100%" }, 
+                                candlestick: {
+                                    fallingColor: { strokeWidth: 0, fill: "#a52714" }, 
+                                    risingColor: { strokeWidth: 0, fill: "#0f9d58" },
+                                },
+                              }}
                         />
                     </div>
                 ) : null}

@@ -1,6 +1,7 @@
 from datetime import datetime
 import yfinance as yf
 import datetime
+from dateutil.relativedelta import relativedelta
 
 def is_support(dataFrame, row, param_1, param_2):
     for i in range(row-param_1+1, row+1):
@@ -23,9 +24,10 @@ def is_resistance(dataFrame, row, param_1, param_2):
 
 
 def snr_main(ticker_name):
+    print(ticker_name)
     stocks = [ticker_name]
-    start = datetime.datetime(2022,1,9)
-    end = datetime.datetime(2022,10,9)
+    start = (datetime.datetime.now()+relativedelta(years=-1))
+    end = datetime.datetime.now()
     df = yf.download(stocks, start=start, end=end)
     print(df.shape[0])
     df['Date'] = df.index
@@ -67,11 +69,10 @@ def snr_main(ticker_name):
 
     Xaxis_Start = 0
     Xaxis_End = 200
-    count=0
     df_partial = df[Xaxis_Start:Xaxis_End]
     df_partial = df[['Date','Low','Close','Open','High']]
     support_array = df_partial.to_numpy().tolist()
-    support_temp = ['Date','Low','Close','Open','High']
+    support_temp = ['day','low','close','open','high']
     support_count = 1
     for i in Final_Supports:
         temp_name = "Support" + str(support_count)
@@ -82,7 +83,7 @@ def snr_main(ticker_name):
     support_array.insert(0,support_temp)
 
     resistance_array = df_partial.to_numpy().tolist()
-    resistance_temp = ['Date','Low','Close','Open','High']
+    resistance_temp = ['day','low','close','open','high']
     resistance_count = 1
     for i in Final_Ressistances:
         temp_name = "Resistance" + str(resistance_count)
@@ -92,4 +93,14 @@ def snr_main(ticker_name):
             j.append(i)
     resistance_array.insert(0,resistance_temp)
 
-    return({"support": support_array, "resistance": resistance_array})
+    s_options = len(Final_Supports)
+    s_temp = {}
+    for i in range(1,s_options+1):
+        s_temp[i] = ({ 'type': "line" })
+
+    r_options = len(Final_Ressistances)
+    r_temp = {}
+    for i in range(1,r_options+1):
+        r_temp[i] = ({ 'type': "line" })
+    
+    return({"support": support_array, "resistance": resistance_array, "so": s_temp, "ro": r_temp})
