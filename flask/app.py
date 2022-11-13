@@ -8,7 +8,7 @@ from rl.src.get_data import load_data
 import os
 import numpy as np
 import pandas as pd
-
+from support_and_resistance import snr_main
 
 app = Flask(__name__)
 
@@ -74,4 +74,9 @@ def recommendations():
     
     return json.dumps({"message": "done"})
 
-    
+@app.route("/support_and_resistance", methods = ["GET"])
+def snr():
+    data = request.get_json() 
+    ticker = (data["ticker"])
+    data = snr_main(ticker)
+    return data

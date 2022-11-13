@@ -14,7 +14,7 @@ const Trends = () => {
                     They are calculated using Standard Deviation method using Moving Average.95% of the graph is likely to fall within the upper and lower Bollinger bands.<br/><br/>
                     The graph tends to fall back to the zone when it goes above or below the boundaries. <br/>
                 </p>
-                <img src={bb}></img><br/>
+                <img src={bb} alt="bollinger bands"></img><br/>
                 <button className="view-more"><a href = "bollinger-bands">View More</a></button>
             </div>
             <div className='trends-child'>
@@ -23,7 +23,7 @@ const Trends = () => {
                     When the price of a security approaches these levels it either critically goes up or down.<br/><br/>        
                     These are important because they indicate if an asset should be sold or bought at that particular price.<br/>
                 </p>
-                <img src={srb}></img><br/>
+                <img src={srb} alt="support and resistance"></img><br/>
                 <button className="view-more"><a href = "support-and-resistance">View More</a></button>
             </div>
         </div>
