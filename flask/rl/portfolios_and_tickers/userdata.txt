@@ -1,4 +1,2 @@
-JPM
-V
-MS
-T
+TSLA
+MSFT
