@@ -14,48 +14,11 @@ import "semantic-ui-css/semantic.min.css";
 import { NEWS_API_KEY } from "../../config";
 import { List } from "semantic-ui-react";
 
-const data = {
-          
-  series: [{
-      name: "Credits Owned",
-      data: [10000,10200,10500,9800,9600,8400,9300,8800,10100,10900]
-  }],
-  options: {
-    chart: {
-      type: 'line',
-      zoom: {
-        enabled: false
-      }
-    },
-    dataLabels: {
-      enabled: false
-    },
-    stroke: {
-      curve: 'straight'
-    },
-    colors: ["#8e0e00"],
-    title: {
-      text: 'Credits Owned in The Past 10 Weeks',
-      align: 'center'
-    },
-    grid: {
-      row: {
-        colors: ['transparent', 'transparent'], // takes an array which will be repeated on columns
-        opacity: 0.5
-      },
-    },
-    xaxis: {
-      categories: ['Week1', 'Week2','Week3','Week4','Week5','Week6','Week7','Week8','Week9','Week10'],
-    }
-  },
-
-
-};
-
 const Dashboard = () => {
   const [dashboard, setDashboard] = useState({});
   const [state, setState] = useState(null);
   const [stock, setStock] = useState({stock : []});
+  const [transaction, setTransaction] = useState([]);
   const logout = () => {
     /* eslint-disable */
     const toLogout = confirm("Are you sure you want to logout ?");
@@ -82,6 +45,20 @@ const Dashboard = () => {
         setDashboard(data.user);
       })
   }, []);
+
+  useEffect(() => {
+    fetch(`${config.baseUrl}/dashboard/get_transaction_count`, {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+        "auth-token": localStorage.getItem("token"),
+      },
+    })
+      .then((res) => res.json())
+      .then(({data}) => {
+        setTransaction(data)
+      })
+  }, [])
 
   const GetArticles = async () => {
       const response = await fetch(
@@ -117,15 +94,60 @@ const Dashboard = () => {
     }
   , []);
 
+  
+  const data = {
+          
+    series: [{
+        name: "Number of Transactions",
+        data: transaction
+    }],
+    options: {
+      chart: {
+        type: 'bar',
+        zoom: {
+          enabled: false
+        },
+      },
+      plotOptions: {
+        bar: {
+            distributed: true, // this line is mandatory
+            barHeight: '85%'
+        },
+    }, 
+      colors: ['#228B22', '#D30000'],
+      dataLabels: {
+        enabled: false
+      },
+      stroke: {
+        curve: 'straight'
+      },
+      title: {
+        text: 'Total Number of Transactions',
+        align: 'center'
+      },
+      xaxis: {
+        categories: ['Buy','Sell'],
+        labels: {
+          style: {
+            colors: ['green','red'],
+            fontSize: '0px'
+          }
+        }
+      }
+    },
+  };
+
+
   return (
     <div className="d-wrapper">
       <div className="navbar">
         <p className="n-text"> Hello <b>{dashboard.name}</b>, Welcome Back!</p>
-        <a className="nav" href="/dashboard"><FcMoneyTransfer size="30px"/>&nbsp;&nbsp;{dashboard.credits}</a>
+        <a className="nav" href="/transactions"><FcMoneyTransfer size="30px"/>&nbsp;&nbsp;{dashboard.credits}</a>
       </div>
       <div className="row-1">
         <div className="element credits-chart">
-          <Chart options={data.options} series={data.series} type="line" height={"100%"} width={"100%"}/>
+          <button><a href = "transactions">View Transactions</a></button>
+          <Chart options={data.options} series={data.series} type="bar" height={"90%"} width={"100%"}/>
         </div>
         <div className="element news">
           <h3>Top News in Stocks! </h3>

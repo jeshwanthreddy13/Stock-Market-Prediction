@@ -5,7 +5,6 @@ router.get("/", async (req, res) => {
     var data = {
         ticker: req.query.stock
     }
-    console.log(data)
     var options = {
         method: 'GET',
         uri: 'http://localhost:5000/support_and_resistance',
