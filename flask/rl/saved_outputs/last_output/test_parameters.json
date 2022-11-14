@@ -1,5 +1,5 @@
 {
-    "initial_cash": 500.0,
+    "initial_cash": 1000.0,
     "initial_portfolio": "rl/portfolios_and_tickers/initial_portfolio.json",
     "assets_to_trade": "rl/portfolios_and_tickers/userdata.txt",
     "buy_rule": "most_first",

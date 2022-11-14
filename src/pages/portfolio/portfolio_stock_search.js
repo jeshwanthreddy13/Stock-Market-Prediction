@@ -7,6 +7,7 @@ import SearchBar from "./portfolio_search_bar";
 import Amount from "./portfolio_amount";
 import Fuse from "fuse.js";
 import Navbar from "../navbar/nav";
+import config from "../../config";
 import {FaDollarSign} from "react-icons/fa";
 
 
@@ -56,7 +57,7 @@ export default function Search (){
       setAmount(event.target.value)
       console.log('value is:', event.target.value);
   }
-  const handleRecommendations = () =>{
+  const handleRecommendations = async() =>{
     if (parseInt(amount)<1000){
       alert("Please enter amount greater than 1000");
     }
@@ -64,7 +65,17 @@ export default function Search (){
       alert("Please select atleast one stock");
     }
     else{
-      console.log("hello");
+      const response_data = await fetch(`${config.baseUrl}/rl/get_recommendations`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          "auth-token": localStorage.getItem("token"),
+        },
+        body: JSON.stringify({amount:amount,
+          tickers:tickers})
+      })
+      const json = response_data.json();
+      console.log(response_data);
     }
   }  
 

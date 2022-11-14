@@ -59,7 +59,7 @@ def recommendations():
             f.write('%s\n' %items)
     x=(datetime.now()+relativedelta(years=-1)).strftime("%Y-%m-%d")
     print(type(x))
-    os.system(r"python rl\src\\main.py --initial_cash "+str(data['amount'])+" --mode train --n_episodes 5  --plot --initial_date "+x+" --final_date "+datetime.now().strftime("%Y-%m-%d"))
+    os.system(r"python rl\src\\main.py --initial_cash "+str(data['amount'])+" --mode train --n_episodes 1  --plot --initial_date "+x+" --final_date "+datetime.now().strftime("%Y-%m-%d"))
     os.system(r"python rl\src\\main.py --initial_cash "+str(data['amount'])+" --mode test --n_episodes 1 --plot --initial_date "+x+" --final_date "+datetime.now().strftime("%Y-%m-%d"))
     b = np.load('rl\saved_outputs\last_output\logs\\test_portfolio_content_history.npy')
     c = np.load('rl\saved_outputs\last_output\logs\\test_portfolio_value_history.npy')
@@ -69,10 +69,8 @@ def recommendations():
         for l in lines:
             tickers_b.append(l.replace("\n", ""))
     df_b = pd.DataFrame(data=b[-1], columns=tickers_b)
-    print(df_b)
-    print(c)
     
-    return json.dumps({"message": "done"})
+    return {"stock_units":df_b.iloc[-1].to_json(),"value":c.tolist()[0]}
 
 @app.route("/support_and_resistance", methods = ["GET"])
 def snr():

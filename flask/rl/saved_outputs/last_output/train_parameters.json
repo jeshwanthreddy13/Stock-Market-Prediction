@@ -1,5 +1,5 @@
 {
-    "initial_cash": 500.0,
+    "initial_cash": 1000.0,
     "initial_portfolio": "rl/portfolios_and_tickers/initial_portfolio.json",
     "assets_to_trade": "rl/portfolios_and_tickers/userdata.txt",
     "buy_rule": "most_first",
@@ -21,7 +21,7 @@
     "grad_clip": 1.0,
     "delay": 1,
     "layer_size": 256,
-    "n_episodes": 3,
+    "n_episodes": 1,
     "mode": "train",
     "experimental": false,
     "checkpoint_directory": "rl\\saved_outputs\\last_output",
