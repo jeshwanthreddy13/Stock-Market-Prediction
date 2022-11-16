@@ -38,7 +38,7 @@ app.use("/api/dashboard", verifyToken, dashboardRoutes);
 app.use("/api/stocks",  verifyToken, stockRoutes);
 app.use("/api/profile",  verifyToken, profileRoutes);
 app.use("/api/predictions", predRoutes);
-app.use("/api/rl",rlRoutes)
+app.use("/api/rl", verifyToken, rlRoutes)
 app.use("/api/snr", snrRoutes)
 app.use("/api/bollinger", bollingerRoutes)
 

@@ -12,12 +12,16 @@ import {FaDollarSign} from "react-icons/fa";
 
 
 
+
 export default function Search (){
   var filtered = Data.filter(function(item) { 
     return item["Name"].length <= 55;  
  });
   const [data, setData] = useState(filtered);
   const [value,setValue] = useState();
+  const [amount, setAmount] = useState('');
+  const [message, setMessage] = useState(''); 
+
 
   const searchData = (pattern) => {
     setValue(pattern)
@@ -51,13 +55,13 @@ export default function Search (){
     }
 
   }
-  const [amount, setAmount] = useState('');
-  const [message, setMessage] = useState(''); 
+
   const handleChange = event => {
       setAmount(event.target.value)
       console.log('value is:', event.target.value);
   }
   const handleRecommendations = async() =>{
+    setMessage('');
     if (parseInt(amount)<1000){
       alert("Please enter amount greater than 1000");
     }
@@ -65,6 +69,7 @@ export default function Search (){
       alert("Please select atleast one stock");
     }
     else{
+      setMessage("Please wait while recommendations are generated");
       const response_data = await fetch(`${config.baseUrl}/rl/get_recommendations`, {
         method: "POST",
         headers: {
@@ -74,8 +79,9 @@ export default function Search (){
         body: JSON.stringify({amount:amount,
           tickers:tickers})
       })
-      const json = response_data.json();
-      console.log(response_data);
+
+      const json = await response_data.json();
+      window.location.href='recommendation';
     }
   }  
 
@@ -84,6 +90,7 @@ export default function Search (){
       <div className="stock-wrap">
         <Navbar />
         <button className="recommendations" onClick={handleRecommendations}>Get recommendations</button>
+        {message}
         <h1 className="Title2">Amount to Trade </h1>
         <div className="amountbar">
         <div className="Amount">

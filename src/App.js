@@ -14,6 +14,7 @@ import Transactions from './pages/transactions/transaction';
 import Trends from './pages/trends/trends'
 import SandR from './pages/trends/support_and_resistance';
 import Bollinger from './pages/trends/bollinger';
+import Recommendation from './pages/portfolio/recommendation';
 
 function App() {
   return (
@@ -33,6 +34,7 @@ function App() {
         <Route path='/portfolio' element= { <Portfolio/> } />
         <Route path='/transactions' element= { <Transactions/> } />
         <Route path='/trends' element= { <Trends/> } />
+        <Route path='/recommendation' element= { <Recommendation/> } />
         <Route path='/support-and-resistance' element={<SandR />} />
         <Route path='/bollinger-bands' element= { <Bollinger/> } />
         <Route exact path = "*" element={localStorage.getItem("token") ? (<Dashboard />) : (<Navigate replace to={"/login"} />)} />
