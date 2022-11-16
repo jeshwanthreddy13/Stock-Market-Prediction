@@ -13,6 +13,7 @@ export default function Search (){
  });
   const [data, setData] = useState(filtered);
   const [value,setValue] = useState();
+  const tickers = ['AAPL','TSLA','MSFT','VZ','AMZN','BA','MS','DB','JPM','META','INTC','GS','HPE','TCS','WMT','T','TGT','WFC','V']
 
   const searchData = (pattern) => {
     setValue(pattern)
@@ -38,6 +39,16 @@ export default function Search (){
     }
   };
   
+  const handleClick = () =>{
+    console.log(value)
+    if(value === undefined || (tickers.indexOf(value.toUpperCase()) === -1)){
+      alert("Please select a valid ticker!")
+    }
+    else{
+      window.location.href = `stocks?stock=` + value
+    }
+  }
+
   return (
     <div className="stock-wrap">
       <Navbar />
@@ -47,7 +58,7 @@ export default function Search (){
         placeholder="Enter the Stock Ticker"
         onChange={(e) => searchData(e.target.value)}
        />
-       <button class="Submit" onClick={() => window.location.href = `stocks?stock=` + value}> Search </button>
+       <button class="Submit" onClick={handleClick}> Search </button>
       </div>
     <div className="Container">
       {data.map((item) => (

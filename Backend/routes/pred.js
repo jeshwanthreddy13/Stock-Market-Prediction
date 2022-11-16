@@ -1,8 +1,14 @@
 const router = require("express").Router();
 const Pred = require("../model/Prediction")
 var request = require('request-promise');
+const cron = require("node-cron");
 
-router.get("/", async (req, res) => {
+cron.schedule("06 15 * * *",function(){
+    generate();
+});
+
+async function generate(){
+    console.log("Predictions Started")
     var options = {
         method: 'GET',
         uri: 'http://localhost:5000/predictions'
@@ -11,16 +17,15 @@ router.get("/", async (req, res) => {
 
         .then(async function (parsedBody) {
             data = JSON.parse(parsedBody)
-            const prediction = new Pred({
+            const updated = await Pred.updateOne({},
+            {
                 stocks: data["stocks"]
-          });
-        const savedStock = await prediction.save();
-        res.json({"stocks" : savedStock.stocks})
+            })
         })
         .catch(function (err) {
             console.log(err);
         });
-});
+};
 
 router.get("/get_predictions", async (req,res) => {
     const result = await Pred.findOne()

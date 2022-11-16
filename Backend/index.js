@@ -10,6 +10,7 @@ const mongoose = require("mongoose");
 const dotenv = require("dotenv");
 const rlRoutes = require("./routes/rl")
 const snrRoutes = require("./routes/snr")
+const bollingerRoutes = require("./routes/bollinger")
 const cors = require('cors');
 
 
@@ -39,5 +40,6 @@ app.use("/api/profile",  verifyToken, profileRoutes);
 app.use("/api/predictions", predRoutes);
 app.use("/api/rl",rlRoutes)
 app.use("/api/snr", snrRoutes)
+app.use("/api/bollinger", bollingerRoutes)
 
 app.listen(3001, () => console.log("server is running..."));

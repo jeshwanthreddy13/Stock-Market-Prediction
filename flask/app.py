@@ -1,6 +1,7 @@
 from flask import Flask,request
 import yfinance as yf
 from lstm import call
+from bollinger import bands
 from datetime import datetime,timedelta,date
 from dateutil.relativedelta import relativedelta
 import json
@@ -78,3 +79,11 @@ def snr():
     ticker = (data["ticker"])
     data = snr_main(ticker)
     return data
+
+@app.route("/bollinger", methods = ["GET"])
+def bollinger():
+    data = request.get_json() 
+    ticker = (data["ticker"])
+    yesterday=datetime.now()-timedelta(1)
+    end_date=datetime.strftime(yesterday,'%Y-%m-%d')
+    return bands(ticker,end_date)

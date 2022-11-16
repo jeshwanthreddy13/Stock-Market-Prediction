@@ -19,6 +19,7 @@
     "jsonwebtoken": "^8.5.1",
     "mogoose": "^0.0.1-security",
     "mongoose": "^6.6.5",
+    "node-cron": "^3.0.2",
     "piesocket-nodejs": "^1.1.0",
     "request-promise": "^4.2.6",
     "yahoo-stock-prices": "^1.1.0"
