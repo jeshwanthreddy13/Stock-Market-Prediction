@@ -128,15 +128,16 @@ const Recommendation = () => {
     return (
         <div>
             <Navbar/>
-            <div>
-                <p>Optimal Investment: 
-                {stocks.map((value) => {
-                    return (<div><h2>{value} {data.stock_units[value]}</h2>
+            <div className="heading">
+                <h1>Optimal Investment for the selected stocks:</h1>
+                <div className="val_head">{stocks.map((value) => {
+                    return (<div className="val"><h4 className="each_val">{value} {data.stock_units[value]}</h4>
                 </div>)
                 })}
-                <h2>Final portfolio value: {finalvalue}</h2>
-                </p>
-            </div>
+              </div>
+                <div className="final_val"><h2 className="final_total">Final portfolio value: {finalvalue}</h2></div>
+            </div>  
+            
             <div className="graph">
             <Chart options={graph.options} series={graph.series} type="line" height={"90%"} width={"100%"}/>
             </div>

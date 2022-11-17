@@ -60,7 +60,7 @@ export default function Search (){
       setAmount(event.target.value)
       console.log('value is:', event.target.value);
   }
-  const handleRecommendations = async() =>{
+  const handleRecommendations = async () =>{
     setMessage('');
     if (parseInt(amount)<1000){
       alert("Please enter amount greater than 1000");
@@ -68,8 +68,8 @@ export default function Search (){
     if (tickers.length==0){
       alert("Please select atleast one stock");
     }
-    else{
-      setMessage("Please wait while recommendations are generated");
+    else if ((parseInt(amount)>=1000) && (tickers.length!=0)){
+      setMessage("Please wait while recommendations are generated..!");
       const response_data = await fetch(`${config.baseUrl}/rl/get_recommendations`, {
         method: "POST",
         headers: {
@@ -90,7 +90,7 @@ export default function Search (){
       <div className="stock-wrap">
         <Navbar />
         <button className="recommendations" onClick={handleRecommendations}>Get recommendations</button>
-        {message}
+        <div className="alert">{message}</div>
         <h1 className="Title2">Amount to Trade </h1>
         <div className="amountbar">
         <div className="Amount">
@@ -115,12 +115,17 @@ export default function Search (){
           onChange={(e) => searchData(e.target.value)}
         />
         </div>
-        <div className="selectedList">
-        <ul>
-              {tickers.map(ticker => (
-                <li key={ticker}>{ticker}</li>
-              ))}
-        </ul>
+
+        <div class="dropdown">
+          <h3>Stocks Added:</h3>
+          <div>
+            <ul className="show">
+                {tickers.map(ticker => (
+                  <li className="show_each" key={ticker}>{ticker}</li>
+                ))}
+            </ul>
+          </div>
+        
         </div>
         
       <div className="Container">
