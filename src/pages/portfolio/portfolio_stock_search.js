@@ -90,7 +90,7 @@ export default function Search (){
       <div className="stock-wrap">
         <Navbar />
         <button className="recommendations" onClick={handleRecommendations}>Get recommendations</button>
-        <div className="alert">{message}</div>
+        <p className="b-mess">{message}</p>
         <h1 className="Title2">Amount to Trade </h1>
         <div className="amountbar">
         <div className="Amount">
