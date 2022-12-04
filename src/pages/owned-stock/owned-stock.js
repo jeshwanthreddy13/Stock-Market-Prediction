@@ -116,7 +116,7 @@ const OwnedStock = () => {
             </div>
             <Modal show={show} onHide={handleClose} backdrop="static">
               <Modal.Header closeButton>
-                <Modal.Title>Buy Stocks</Modal.Title>
+                <Modal.Title>Sell Stocks</Modal.Title>
               </Modal.Header>
               <Modal.Body>
                 <Form>

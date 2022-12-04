@@ -123,6 +123,7 @@ const Stock = () => {
               })
             })
             .then(handleClose())
+            .then(window.location.href="owned_stock")
           }
         }
       }
