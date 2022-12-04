@@ -14,7 +14,7 @@
   .Title2 {
     text-align: center;
     padding-top: 6%;
-    margin-left: 23%;
+    margin-left: 1%;
     padding-bottom: 3%;
   }
   .recommendations{
@@ -36,6 +36,50 @@
     padding-left: 20%;
     margin-top: 5%;
 
+  }
+  .wait{
+    text-align: center;
+    color: red;
+    background-color: rgb(193, 177, 177);
+    font-size: 200%;
+    font-weight: bold;
+  }
+  .dropdown {
+    margin-top: 2%;
+    margin-left: auto;
+    margin-right: auto;
+    width: 10%;
+    padding-top: 4px;
+    text-align: center;
+    color: rgb(142,14,0);
+    border-radius: 20px 0 0 20px;
+    font-size: 20px;
+   
+
+  }
+  .show {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    width: 200px;
+    background-color: white;
+  }
+  
+  .show_each {
+    display: block;
+    background-color: rgb(142,14,0);
+    color: white;
+    padding: 8px 16px;
+    text-decoration: none;
+    border: 2px solid rgb(142,14,0);
+    border-radius: 12px;
+    padding: 5px;
+  }
+  
+  /* Change the link color on hover */
+  .show_each:hover {
+    background-color: white;
+    color: rgb(142,14,0);
   }
   .stock-wrap{
 
