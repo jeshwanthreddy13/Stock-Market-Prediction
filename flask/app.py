@@ -45,7 +45,6 @@ def download():
 @app.route("/get_recommendations", methods = ['POST'])
 def recommendations():
     data=request.get_json()
-    print(type(data['tickers']))
     with open("rl\portfolios_and_tickers\initial_portfolio_subset.json", "r") as jsonFile:
         change = json.load(jsonFile)
 
@@ -59,8 +58,7 @@ def recommendations():
         for items in data['tickers']:
             f.write('%s\n' %items)
     x=(datetime.now()+relativedelta(years=-1)).strftime("%Y-%m-%d")
-    print(type(x))
-    os.system(r"python rl\src\\main.py --initial_cash "+str(data['amount'])+" --mode train --n_episodes 1  --plot --initial_date "+x+" --final_date "+datetime.now().strftime("%Y-%m-%d"))
+    os.system(r"python rl\src\\main.py --initial_cash "+str(data['amount'])+" --mode train --n_episodes 10  --plot --initial_date "+x+" --final_date "+datetime.now().strftime("%Y-%m-%d"))
     os.system(r"python rl\src\\main.py --initial_cash "+str(data['amount'])+" --mode test --n_episodes 1 --plot --initial_date "+x+" --final_date "+datetime.now().strftime("%Y-%m-%d"))
     b = np.load('rl\saved_outputs\last_output\logs\\test_portfolio_content_history.npy')
     c = np.load('rl\saved_outputs\last_output\logs\\test_portfolio_value_history.npy')

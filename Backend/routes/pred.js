@@ -3,7 +3,7 @@ const Pred = require("../model/Prediction")
 var request = require('request-promise');
 const cron = require("node-cron");
 
-cron.schedule("0 18 * * *",function(){
+cron.schedule("00 18 * * *",function(){
     generate();
 });
 
